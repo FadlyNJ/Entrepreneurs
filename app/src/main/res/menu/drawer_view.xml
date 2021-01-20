@@ -1,0 +1,42 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/home_fragment"
+            android:icon="@drawable/home"
+            android:title="Home"
+            android:checked="true" />
+        <item
+            android:id="@+id/start_fragment"
+            android:icon="@drawable/businessman"
+            android:title="How to Start" />
+        <item
+            android:id="@+id/challenge_fragment"
+            android:icon="@drawable/trophy"
+            android:title="30 Days Challenge" />
+        <item
+            android:id="@+id/academy_fragment"
+            android:icon="@drawable/academy"
+            android:title="Academy" />
+        <item
+            android:id="@+id/bootcamp_fragment"
+            android:icon="@drawable/fireplace"
+            android:title="Bootcamp" />
+        <item
+            android:id="@+id/group_fragment"
+            android:icon="@drawable/group"
+            android:title="Group Coaching" />
+        <item
+            android:id="@+id/individual_fragment"
+            android:icon="@drawable/spy"
+            android:title="1-1 Coaching" />
+        <item
+            android:id="@+id/premiere_fragment"
+            android:icon="@drawable/hand"
+            android:title="Premiere" />
+        <item
+            android:id="@+id/live_fragment"
+            android:icon="@drawable/camera"
+            android:title="Live" />
+    </group>
+</menu>

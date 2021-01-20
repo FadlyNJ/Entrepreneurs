@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="220dp"
+    android:background="#191919"
+    android:padding="24dp"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark"
+    android:orientation="vertical"
+    android:gravity="bottom">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:background="@android:color/darker_gray"
+        android:layout_marginBottom="30dp"/>
+
+    <TextView
+        android:id="@+id/forum_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Entrepreneurs Forum"
+        android:textSize="8pt"
+        android:textColor="@android:color/white"
+        android:layout_marginBottom="50dp"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"/>
+
+</LinearLayout>

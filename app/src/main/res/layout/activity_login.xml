@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+ <LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Login">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="60dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/entrepreneurs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ENTREPRENEURS."
+            android:textStyle="bold"
+            android:textSize="14pt"
+            android:textColor="@color/black"
+            android:typeface="monospace"/>
+
+        <LinearLayout
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:text="Sign In"
+                android:textColor="@color/black"
+                android:textSize="8pt"/>
+
+            <TextView
+                android:id="@+id/create"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="103.5dp"
+                android:layout_gravity="bottom"
+                android:text="Create an Account"
+                android:textColor="#007cff"
+                android:textSize="6pt"/>
+
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/email"
+            android:inputType="textEmailAddress"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/user_bg"
+            android:drawableLeft="@drawable/user"
+            android:drawablePadding="15dp"
+            android:hint="Email Address"
+            android:paddingLeft="16dp"
+            android:layout_marginTop="20dp"/>
+
+        <EditText
+            android:id="@+id/password"
+            android:inputType="textPassword"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/user_bg"
+            android:drawableLeft="@drawable/key"
+            android:drawablePadding="15dp"
+            android:hint="Password"
+            android:paddingLeft="16dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:layout_gravity="start"
+                android:id="@+id/remember"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:buttonTint="#007cff"
+                android:text="Remember Me"/>
+
+            <TextView
+                android:id="@+id/forgot"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="37dp"
+                android:layout_gravity="bottom"
+                android:text="Forgot Password?"
+                android:textColor="#007cff"
+                android:textSize="6pt"/>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/login"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:background="@drawable/button"
+            android:textColor="@color/white"
+            android:textAllCaps="false"
+            android:text="Log In"/>
+
+    </LinearLayout>
+
+</LinearLayout>
