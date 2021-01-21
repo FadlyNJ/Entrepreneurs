@@ -29,11 +29,39 @@
         android:id="@+id/navView"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:layout_gravity="start"
         android:background="#191919"
+        android:layout_gravity="start"
         app:menu="@menu/drawer_view"
         app:itemTextColor="@color/drawer_item"
         app:itemIconTint="@color/drawer_item"
-        app:headerLayout="@layout/nav_header"/>
+        app:headerLayout="@layout/nav_header">
+
+        <Button
+            android:id="@+id/login"
+            android:layout_gravity="center|bottom"
+            android:layout_marginBottom="80dp"
+            android:layout_marginLeft="18dp"
+            android:layout_marginRight="18dp"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:background="@drawable/button2"
+            android:textColor="@color/white"
+            android:textAllCaps="false"
+            android:text="Sign in"/>
+
+        <Button
+            android:id="@+id/register"
+            android:layout_gravity="center|bottom"
+            android:layout_marginBottom="30dp"
+            android:layout_marginLeft="18dp"
+            android:layout_marginRight="18dp"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:background="@drawable/button"
+            android:textColor="@color/white"
+            android:textAllCaps="false"
+            android:text="Sign up"/>
+
+    </com.google.android.material.navigation.NavigationView>
 
 </androidx.drawerlayout.widget.DrawerLayout>

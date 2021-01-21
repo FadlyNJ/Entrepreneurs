@@ -12,13 +12,18 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.app.LauncherActivity;
+import android.content.Intent;
 import android.content.res.Configuration;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
 
@@ -26,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
     private DrawerLayout mDrawer;
     private Toolbar toolbar;
     private NavigationView nvDrawer;
+    private Button login, register;
 
     private ActionBarDrawerToggle drawerToggle;
 
@@ -40,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
 
-        // Find our drawer view
+        // Find drawer view
         nvDrawer = (NavigationView) findViewById(R.id.navView);
         // Setup drawer view
         setupDrawerContent(nvDrawer);
@@ -49,15 +55,60 @@ public class MainActivity extends AppCompatActivity {
         mDrawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawerToggle = setupDrawerToggle();
 
-        // Setup toggle to display hamburger icon with nice animation
+        // Setup toggle to display hamburger icon with animation
         drawerToggle.setDrawerIndicatorEnabled(true);
         drawerToggle.syncState();
 
         // Tie DrawerLayout events to the ActionBarToggle
         mDrawer.addDrawerListener(drawerToggle);
 
-        //set default fragment
+        //Set default / home fragment
         loadFragment(new HomeFragment());
+
+        //Find drawer header
+        NavigationView navigationView = (NavigationView) findViewById(R.id.navView);
+        View headerview = navigationView.getHeaderView(0);
+
+        //Set click on header item
+        LinearLayout header = (LinearLayout) headerview.findViewById(R.id.nav_header);
+        TextView forum = (TextView) headerview.findViewById(R.id.forum_fragment);
+
+        forum.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                //Forum Fragment called
+                getSupportFragmentManager().beginTransaction()
+                    .setReorderingAllowed(true)
+                    .replace(R.id.flContent, ForumFragment.class, null)
+                    .commit();
+
+                //Close Drawer
+                mDrawer.closeDrawers();
+            }
+
+        });
+
+        login = (Button)findViewById(R.id.login);
+        login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent login = new Intent(MainActivity.this, Login.class);
+                startActivity(login);
+
+            }
+        });
+
+        register = (Button)findViewById(R.id.register);
+        register.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent register = new Intent(MainActivity.this, Register.class);
+                startActivity(register);
+
+            }
+        });
+
     }
 
     private ActionBarDrawerToggle setupDrawerToggle() {
@@ -105,6 +156,7 @@ public class MainActivity extends AppCompatActivity {
         Fragment fragment = null;
         Class fragmentClass;
         switch(menuItem.getItemId()) {
+
             case R.id.home_fragment:
                 fragmentClass = HomeFragment.class;
                 break;

@@ -43,8 +43,8 @@
                 android:id="@+id/create"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="103.5dp"
-                android:layout_gravity="bottom"
+                android:layout_marginLeft="90dp"
+                android:layout_gravity="bottom|end"
                 android:text="Create an Account"
                 android:textColor="#007cff"
                 android:textSize="6pt"/>
@@ -93,8 +93,8 @@
                 android:id="@+id/forgot"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="37dp"
-                android:layout_gravity="bottom"
+                android:layout_marginLeft="19dp"
+                android:layout_gravity="bottom|end"
                 android:text="Forgot Password?"
                 android:textColor="#007cff"
                 android:textSize="6pt"/>
