@@ -12,7 +12,7 @@ import android.widget.Toast;
 import org.w3c.dom.Text;
 
 public class Register extends AppCompatActivity {
-    private TextView login, terms, service, privacy;
+    private TextView login, terms, service, privacy, home;
     private Button register;
 
     @Override
@@ -27,6 +27,7 @@ public class Register extends AppCompatActivity {
                 Toast.makeText(Register.this, "PENDAFTARAN BERHASIL :D", Toast.LENGTH_LONG).show();
                 Intent register = new Intent(Register.this, MainActivity.class);
                 startActivity(register);
+                finish();
 
             }
         });
@@ -37,6 +38,18 @@ public class Register extends AppCompatActivity {
             public void onClick(View view) {
                 Intent login = new Intent(Register.this, Login.class);
                 startActivity(login);
+                finish();
+
+            }
+        });
+
+        home = (TextView) findViewById(R.id.home);
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent home = new Intent(Register.this, MainActivity.class);
+                startActivity(home);
+                finish();
 
             }
         });

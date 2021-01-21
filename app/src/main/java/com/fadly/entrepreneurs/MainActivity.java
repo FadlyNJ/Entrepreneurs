@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
     private Toolbar toolbar;
     private NavigationView nvDrawer;
     private Button login, register;
+    private TextView home;
 
     private ActionBarDrawerToggle drawerToggle;
 
@@ -95,6 +96,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent login = new Intent(MainActivity.this, Login.class);
                 startActivity(login);
+                finish();
 
             }
         });
@@ -105,6 +107,18 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent register = new Intent(MainActivity.this, Register.class);
                 startActivity(register);
+                finish();
+
+            }
+        });
+
+        home = (TextView) findViewById(R.id.home);
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent home = new Intent(MainActivity.this, MainActivity.class);
+                startActivity(home);
+                finish();
 
             }
         });

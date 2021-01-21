@@ -16,7 +16,7 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/entrepreneurs"
+            android:id="@+id/home"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="ENTREPRENEURS."

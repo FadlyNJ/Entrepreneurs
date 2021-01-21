@@ -12,7 +12,7 @@ import android.widget.Toast;
 
 public class Login extends AppCompatActivity {
     private Button login;
-    private TextView create, forgot;
+    private TextView create, forgot, home;
     private CheckBox remember;
 
     @Override
@@ -27,6 +27,7 @@ public class Login extends AppCompatActivity {
                 Toast.makeText(Login.this, "LOGIN BERHASIL :D", Toast.LENGTH_LONG).show();
                 Intent login = new Intent(Login.this, MainActivity.class);
                 startActivity(login);
+                finish();
 
             }
         });
@@ -37,6 +38,7 @@ public class Login extends AppCompatActivity {
             public void onClick(View view) {
                 Intent register = new Intent(Login.this, Register.class);
                 startActivity(register);
+                finish();
 
             }
         });
@@ -47,6 +49,18 @@ public class Login extends AppCompatActivity {
             public void onClick(View view) {
                 Intent forgot = new Intent(Login.this, Register.class);
                 startActivity(forgot);
+                finish();
+
+            }
+        });
+
+        home = (TextView) findViewById(R.id.home);
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent home = new Intent(Login.this, MainActivity.class);
+                startActivity(home);
+                finish();
 
             }
         });
