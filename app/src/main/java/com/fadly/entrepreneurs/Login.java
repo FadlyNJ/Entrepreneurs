@@ -26,9 +26,8 @@ public class Login extends AppCompatActivity {
             public void onClick(View view) {
                 Toast.makeText(Login.this, "LOGIN BERHASIL :D", Toast.LENGTH_LONG).show();
                 Intent login = new Intent(Login.this, MainActivity.class);
+                login.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(login);
-                finish();
-
             }
         });
 
@@ -59,8 +58,8 @@ public class Login extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent home = new Intent(Login.this, MainActivity.class);
+                home.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(home);
-                finish();
 
             }
         });

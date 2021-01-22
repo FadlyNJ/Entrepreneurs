@@ -17,6 +17,8 @@ import android.content.res.Configuration;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -25,11 +27,12 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends AppCompatActivity {
     private DrawerLayout mDrawer;
-    private Toolbar toolbar;
+    private MaterialToolbar toolbar;
     private NavigationView nvDrawer;
     private Button login, register;
     private TextView home;
@@ -41,8 +44,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Set a Toolbar to replace the ActionBar.
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        // Set the Toolbar to replace the ActionBar.
+        toolbar = (MaterialToolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
@@ -96,7 +99,6 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent login = new Intent(MainActivity.this, Login.class);
                 startActivity(login);
-                finish();
 
             }
         });
@@ -107,10 +109,10 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent register = new Intent(MainActivity.this, Register.class);
                 startActivity(register);
-                finish();
 
             }
         });
+
 
         home = (TextView) findViewById(R.id.home);
         home.setOnClickListener(new View.OnClickListener() {
@@ -149,6 +151,11 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         if (drawerToggle.onOptionsItemSelected(item)) {
             return true;
+        }
+        switch (item.getItemId()){
+            case R.id.cart :
+                Toast.makeText(this, "Developed by : NUGIEEE :D", Toast.LENGTH_SHORT).show();
+                break;
         }
         return super.onOptionsItemSelected(item);
     }
@@ -216,6 +223,15 @@ public class MainActivity extends AppCompatActivity {
         // Close the navigation drawer
         mDrawer.closeDrawers();
     }
+
+    //Applying menu item to the App Bar
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.top_app_bar, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
 
     public void loadFragment(Fragment fragment) {
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();

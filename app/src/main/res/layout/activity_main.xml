@@ -7,15 +7,35 @@
     android:layout_height="match_parent"
     android:id="@+id/drawer_layout">
 
-    <LinearLayout
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <include
-            layout="@layout/toolbar"
+        <com.google.android.material.appbar.AppBarLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:fitsSystemWindows="true">
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:id="@+id/toolbar"
+                app:menu="@menu/top_app_bar">
+
+                <TextView
+                    android:id="@+id/home"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="ENTREPRENEURS."
+                    android:textStyle="bold"
+                    android:textSize="12pt"
+                    android:textColor="#191919"/>
+
+            </com.google.android.material.appbar.MaterialToolbar>
+
+        </com.google.android.material.appbar.AppBarLayout>
 
         <FrameLayout
             android:id="@+id/flContent"
@@ -23,7 +43,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
-    </LinearLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/navView"
@@ -45,7 +65,7 @@
             android:layout_width="match_parent"
             android:layout_height="35dp"
             android:background="@drawable/button2"
-            android:textColor="@color/white"
+            android:textColor="#a1abb5"
             android:textAllCaps="false"
             android:text="Sign in"/>
 

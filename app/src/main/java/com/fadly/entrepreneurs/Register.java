@@ -26,8 +26,8 @@ public class Register extends AppCompatActivity {
             public void onClick(View view) {
                 Toast.makeText(Register.this, "PENDAFTARAN BERHASIL :D", Toast.LENGTH_LONG).show();
                 Intent register = new Intent(Register.this, MainActivity.class);
+                register.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(register);
-                finish();
 
             }
         });
@@ -48,8 +48,8 @@ public class Register extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent home = new Intent(Register.this, MainActivity.class);
+                home.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(home);
-                finish();
 
             }
         });
