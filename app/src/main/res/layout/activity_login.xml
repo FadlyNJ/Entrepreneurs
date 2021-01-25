@@ -51,29 +51,42 @@
 
         </LinearLayout>
 
-        <EditText
-            android:id="@+id/email"
-            android:inputType="textEmailAddress"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilEmail"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:background="@drawable/user_bg"
-            android:drawableLeft="@drawable/user"
-            android:drawablePadding="15dp"
-            android:hint="Email Address"
-            android:paddingLeft="16dp"
-            android:layout_marginTop="20dp"/>
-
-        <EditText
-            android:id="@+id/password"
-            android:inputType="textPassword"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:background="@drawable/user_bg"
-            android:drawableLeft="@drawable/key"
-            android:drawablePadding="15dp"
+            android:hint="Email Address"
+            app:errorEnabled="true"
+            app:startIconDrawable="@drawable/user"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             android:hint="Password"
-            android:paddingLeft="16dp"/>
+            app:startIconDrawable="@drawable/key"
+            app:endIconMode="password_toggle"
+            app:errorEnabled="true"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -81,7 +94,7 @@
             android:layout_marginTop="20dp"
             android:orientation="horizontal">
 
-            <CheckBox
+            <com.google.android.material.checkbox.MaterialCheckBox
                 android:layout_gravity="start"
                 android:id="@+id/remember"
                 android:layout_width="wrap_content"
@@ -101,15 +114,16 @@
 
         </LinearLayout>
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/login"
-            android:layout_marginTop="20dp"
             android:layout_width="match_parent"
-            android:layout_height="35dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:backgroundTint="#007cff"
             android:background="@drawable/button"
             android:textColor="@color/white"
-            android:textAllCaps="false"
-            android:text="Log In"/>
+            android:text="Log in"
+            android:textAllCaps="false"/>
 
     </LinearLayout>
 

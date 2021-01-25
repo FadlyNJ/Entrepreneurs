@@ -1,5 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!--IDK-->
     <string name="drawer_open">Open navigation drawer</string>
     <string name="drawer_close">Close navigation drawer</string>
+
+    <!--Top App Bar-->
+    <string name="shopping_cart">Shopping Cart</string>
+    <string name="entrepreneurs">ENTREPRENEURS.</string>
+
+    <!--Navigation Drawer-->
+    <string name="sign_in">Sign in</string>
+    <string name="sign_up">Sign up</string>
+    <string name="home_fragment">Home</string>
+    <string name="start_fragment">How to Start</string>
+    <string name="challenge_fragment">30 Days Challenge</string>
+    <string name="academy_fragment">Academy</string>
+    <string name="bootcamp_fragment">Bootcamp</string>
+    <string name="group_fragment">Group Coaching</string>
+    <string name="coaching_fragment">1-1 Coaching</string>
+    <string name="premiere_fragment">Premiere</string>
+    <string name="live_fragment">Live</string>
 </resources>

@@ -28,7 +28,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="ENTREPRENEURS."
+                    android:text="@string/entrepreneurs"
                     android:textStyle="bold"
                     android:textSize="12pt"
                     android:textColor="#191919"/>
@@ -67,7 +67,7 @@
             android:background="@drawable/button2"
             android:textColor="#a1abb5"
             android:textAllCaps="false"
-            android:text="Sign in"/>
+            android:text="@string/sign_in"/>
 
         <Button
             android:id="@+id/register"
@@ -80,7 +80,7 @@
             android:background="@drawable/button"
             android:textColor="@color/white"
             android:textAllCaps="false"
-            android:text="Sign up"/>
+            android:text="@string/sign_up"/>
 
     </com.google.android.material.navigation.NavigationView>
 
