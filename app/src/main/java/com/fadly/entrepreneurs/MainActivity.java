@@ -3,6 +3,7 @@ package com.fadly.entrepreneurs;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
@@ -12,10 +13,12 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.app.LauncherActivity;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -28,14 +31,16 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.appbar.MaterialToolbar;
+import com.google.android.material.button.MaterialButton;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends AppCompatActivity {
     private DrawerLayout mDrawer;
     private MaterialToolbar toolbar;
     private NavigationView nvDrawer;
-    private Button login, register;
-    private TextView home;
+    private MaterialButton btnLogin, btnRegister;
+    private TextView tvHome;
 
     private ActionBarDrawerToggle drawerToggle;
 
@@ -93,8 +98,8 @@ public class MainActivity extends AppCompatActivity {
 
         });
 
-        login = (Button)findViewById(R.id.login);
-        login.setOnClickListener(new View.OnClickListener() {
+        btnLogin = (MaterialButton) findViewById(R.id.btnLogin);
+        btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent login = new Intent(MainActivity.this, Login.class);
@@ -103,8 +108,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        register = (Button)findViewById(R.id.register);
-        register.setOnClickListener(new View.OnClickListener() {
+        btnRegister = (MaterialButton) findViewById(R.id.btnRegister);
+        btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent register = new Intent(MainActivity.this, Register.class);
@@ -114,8 +119,8 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        home = (TextView) findViewById(R.id.home);
-        home.setOnClickListener(new View.OnClickListener() {
+        tvHome = (TextView) findViewById(R.id.tvHome);
+        tvHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent home = new Intent(MainActivity.this, MainActivity.class);
@@ -152,11 +157,11 @@ public class MainActivity extends AppCompatActivity {
         if (drawerToggle.onOptionsItemSelected(item)) {
             return true;
         }
-        switch (item.getItemId()){
+        /*switch (item.getItemId()){
             case R.id.cart :
                 Toast.makeText(this, "Developed by : NUGIEEE :D", Toast.LENGTH_SHORT).show();
                 break;
-        }
+        }*/
         return super.onOptionsItemSelected(item);
     }
 

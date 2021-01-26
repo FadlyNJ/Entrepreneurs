@@ -5,8 +5,42 @@
 
     <item
         android:id="@+id/cart"
-        android:icon="@drawable/cart"
+        android:icon="@drawable/ic_outline_shopping_cart_24"
         android:title="@string/shopping_cart"
-        app:showAsAction="ifRoom" />
+        app:showAsAction="ifRoom">
+
+        <menu>
+
+            <item
+            android:icon="@drawable/ic_baseline_filter_1_24"
+            android:title="Item 1"/>
+
+            <item
+            android:icon="@drawable/ic_baseline_filter_2_24"
+            android:title="Item 2"/>
+
+            <item
+                android:icon="@drawable/ic_baseline_filter_3_24"
+                android:title="Item 3"/>
+
+            <item
+                android:icon="@drawable/ic_baseline_filter_3_24"
+                android:title="Item 4"/>
+
+            <item
+                android:icon="@drawable/ic_baseline_filter_2_24"
+                android:title="Item 5"/>
+
+            <item
+                android:icon="@drawable/ic_baseline_filter_1_24"
+                android:title="Item 6"/>
+
+            <item
+                android:icon="@drawable/ic_baseline_filter_2_24"
+                android:title="Item 6"/>
+
+        </menu>
+
+    </item>
 
 </menu>

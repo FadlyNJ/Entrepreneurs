@@ -1,34 +1,38 @@
 package com.fadly.entrepreneurs;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.button.MaterialButton;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
 import org.w3c.dom.Text;
 
 public class Register extends AppCompatActivity {
-    private TextView login, terms, service, privacy, home;
+    private TextView tvSignin, tvTerms, tvService, tvPrivacy, tvHome;
     private TextInputLayout tilEmail, tilPassword, tilFirst, tilLast, tilNick;
     private TextInputEditText txtEmail, txtPassword, txtFirst, txtLast, txtNick;
     private String email, password, first, last, nick;
-    private MaterialButton register;
+    private MaterialButton btnRegister;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        register = (MaterialButton) findViewById(R.id.register);
-        register.setOnClickListener(new View.OnClickListener() {
+        btnRegister = (MaterialButton) findViewById(R.id.btnRegister);
+        btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -37,8 +41,8 @@ public class Register extends AppCompatActivity {
             }
         });
 
-        login = (TextView) findViewById(R.id.signin);
-        login.setOnClickListener(new View.OnClickListener() {
+        tvSignin = (TextView) findViewById(R.id.tvSignin);
+        tvSignin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent login = new Intent(Register.this, Login.class);
@@ -48,8 +52,8 @@ public class Register extends AppCompatActivity {
             }
         });
 
-        home = (TextView) findViewById(R.id.home);
-        home.setOnClickListener(new View.OnClickListener() {
+        tvHome = (TextView) findViewById(R.id.tvHome);
+        tvHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent home = new Intent(Register.this, MainActivity.class);
@@ -59,29 +63,77 @@ public class Register extends AppCompatActivity {
             }
         });
 
-        terms = (TextView) findViewById(R.id.terms);
-        terms.setOnClickListener(new View.OnClickListener() {
+        tvTerms = (TextView) findViewById(R.id.tvTerms);
+        tvTerms.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(Register.this, "TERMS AND SERVICE :D", Toast.LENGTH_LONG).show();
+                new MaterialAlertDialogBuilder(Register.this)
+                        .setTitle("Terms of Service")
+                        .setMessage("Lorem ipsum dolor sit amet, consectetur adipiscing elit, " +
+                                "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. " +
+                                "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris " +
+                                "nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in " +
+                                "reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla " +
+                                "pariatur. Excepteur sint occaecat cupidatat non proident, sunt in " +
+                                "culpa qui officia deserunt mollit anim id est laborum.")
+                        .setNeutralButton("Ok", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+
+                            }
+                        })
+
+                        .show();
 
             }
         });
 
-        service = (TextView) findViewById(R.id.service);
-        service.setOnClickListener(new View.OnClickListener() {
+        tvService = (TextView) findViewById(R.id.tvService);
+        tvService.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(Register.this, "TERMS OF SERVICE :D", Toast.LENGTH_LONG).show();
+                new MaterialAlertDialogBuilder(Register.this)
+                    .setTitle("Terms of Service")
+                    .setMessage("Lorem ipsum dolor sit amet, consectetur adipiscing elit, " +
+                            "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. " +
+                            "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris " +
+                            "nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in " +
+                            "reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla " +
+                            "pariatur. Excepteur sint occaecat cupidatat non proident, sunt in " +
+                            "culpa qui officia deserunt mollit anim id est laborum.")
+                        .setNeutralButton("Ok", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+
+                            }
+                        })
+
+                    .show();
 
             }
         });
 
-        privacy = (TextView) findViewById(R.id.privacy);
-        privacy.setOnClickListener(new View.OnClickListener() {
+        tvPrivacy = (TextView) findViewById(R.id.tvPrivacy);
+        tvPrivacy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(Register.this, "PRIVACY POLICY :D", Toast.LENGTH_LONG).show();
+                new MaterialAlertDialogBuilder(Register.this)
+                        .setTitle("Privacy Policy")
+                        .setMessage("Lorem ipsum dolor sit amet, consectetur adipiscing elit, " +
+                                "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. " +
+                                "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris " +
+                                "nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in " +
+                                "reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla " +
+                                "pariatur. Excepteur sint occaecat cupidatat non proident, sunt in " +
+                                "culpa qui officia deserunt mollit anim id est laborum.")
+                        .setNeutralButton("Ok", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+
+                            }
+                        })
+
+                        .show();
             }
         });
 

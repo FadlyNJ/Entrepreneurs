@@ -15,7 +15,8 @@
         <com.google.android.material.appbar.AppBarLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fitsSystemWindows="true">
+            android:fitsSystemWindows="true"
+            android:backgroundTint="#fafafa">
 
             <com.google.android.material.appbar.MaterialToolbar
                 android:layout_width="match_parent"
@@ -24,7 +25,7 @@
                 app:menu="@menu/top_app_bar">
 
                 <TextView
-                    android:id="@+id/home"
+                    android:id="@+id/tvHome"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -56,31 +57,36 @@
         app:itemIconTint="@color/drawer_item"
         app:headerLayout="@layout/nav_header">
 
-        <Button
-            android:id="@+id/login"
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_gravity="center|bottom"
-            android:layout_marginBottom="80dp"
             android:layout_marginLeft="18dp"
             android:layout_marginRight="18dp"
-            android:layout_width="match_parent"
-            android:layout_height="35dp"
-            android:background="@drawable/button2"
+            android:layout_marginBottom="80dp"
             android:textColor="#a1abb5"
             android:textAllCaps="false"
-            android:text="@string/sign_in"/>
+            android:text="@string/sign_in"
+            app:cornerRadius="20dp"
+            app:strokeColor="#a1abb5"
+            app:backgroundTint="#191919"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
 
-        <Button
-            android:id="@+id/register"
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnRegister"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_gravity="center|bottom"
-            android:layout_marginBottom="30dp"
             android:layout_marginLeft="18dp"
             android:layout_marginRight="18dp"
-            android:layout_width="match_parent"
-            android:layout_height="35dp"
-            android:background="@drawable/button"
+            android:layout_marginBottom="30dp"
             android:textColor="@color/white"
             android:textAllCaps="false"
-            android:text="@string/sign_up"/>
+            android:text="@string/sign_up"
+            app:backgroundTint="#007cff"
+            app:cornerRadius="20dp"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
 
     </com.google.android.material.navigation.NavigationView>
 

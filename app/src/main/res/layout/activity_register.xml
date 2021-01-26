@@ -22,7 +22,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/home"
+                android:id="@+id/tvHome"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -56,7 +56,7 @@
                     android:textSize="6pt" />
 
                 <TextView
-                    android:id="@+id/signin"
+                    android:id="@+id/tvSignin"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="bottom"
@@ -214,7 +214,7 @@
                     android:textSize="6pt" />
 
                 <TextView
-                    android:id="@+id/terms"
+                    android:id="@+id/tvTerms"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="3.5dp"
@@ -230,7 +230,7 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/service"
+                    android:id="@+id/tvService"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="start"
@@ -248,7 +248,7 @@
                     android:textSize="6pt" />
 
                 <TextView
-                    android:id="@+id/privacy"
+                    android:id="@+id/tvPrivacy"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="3.5dp"
@@ -259,14 +259,15 @@
             </LinearLayout>
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/register"
+                android:id="@+id/btnRegister"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:background="@drawable/button"
                 android:text="Create Account"
                 android:textAllCaps="false"
-                app:backgroundTint="#007cff" />
+                app:backgroundTint="#007cff"
+                app:cornerRadius="20dp"
+                style="@style/Widget.MaterialComponents.Button"/>
 
         </LinearLayout>
 

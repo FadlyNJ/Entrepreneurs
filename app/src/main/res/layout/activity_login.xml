@@ -16,7 +16,7 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/home"
+            android:id="@+id/tvHome"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="ENTREPRENEURS."
@@ -40,7 +40,7 @@
                 android:textSize="8pt"/>
 
             <TextView
-                android:id="@+id/create"
+                android:id="@+id/tvCreate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="90dp"
@@ -96,14 +96,14 @@
 
             <com.google.android.material.checkbox.MaterialCheckBox
                 android:layout_gravity="start"
-                android:id="@+id/remember"
+                android:id="@+id/checkRemember"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:buttonTint="#007cff"
                 android:text="Remember Me"/>
 
             <TextView
-                android:id="@+id/forgot"
+                android:id="@+id/tvForgot"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="19dp"
@@ -115,15 +115,16 @@
         </LinearLayout>
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/login"
+            android:id="@+id/btnLogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            app:backgroundTint="#007cff"
-            android:background="@drawable/button"
             android:textColor="@color/white"
             android:text="Log in"
-            android:textAllCaps="false"/>
+            android:textAllCaps="false"
+            app:backgroundTint="#007cff"
+            app:cornerRadius="20dp"
+            style="@style/Widget.MaterialComponents.Button"/>
 
     </LinearLayout>
 

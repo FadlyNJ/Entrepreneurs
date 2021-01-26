@@ -11,13 +11,14 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.button.MaterialButton;
+import com.google.android.material.checkbox.MaterialCheckBox;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
 public class Login extends AppCompatActivity {
-    private MaterialButton login;
-    private TextView create, forgot, home;
-    private CheckBox remember;
+    private MaterialButton btnLogin;
+    private TextView tvCreate, tvForgot, tvHome;
+    private MaterialCheckBox checkRemember;
     private TextInputLayout tilEmail, tilPassword;
     private TextInputEditText txtEmail, txtPassword;
     private String email, password;
@@ -27,8 +28,8 @@ public class Login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        login = (MaterialButton) findViewById(R.id.login);
-        login.setOnClickListener(new View.OnClickListener() {
+        btnLogin = (MaterialButton) findViewById(R.id.btnLogin);
+        btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -38,8 +39,8 @@ public class Login extends AppCompatActivity {
             }
         });
 
-        create = (TextView) findViewById(R.id.create);
-        create.setOnClickListener(new View.OnClickListener() {
+        tvCreate = (TextView) findViewById(R.id.tvCreate);
+        tvCreate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent register = new Intent(Login.this, Register.class);
@@ -49,8 +50,8 @@ public class Login extends AppCompatActivity {
             }
         });
 
-        forgot = (TextView) findViewById(R.id.forgot);
-        forgot.setOnClickListener(new View.OnClickListener() {
+        tvForgot = (TextView) findViewById(R.id.tvForgot);
+        tvForgot.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent forgot = new Intent(Login.this, Register.class);
@@ -60,8 +61,8 @@ public class Login extends AppCompatActivity {
             }
         });
 
-        home = (TextView) findViewById(R.id.home);
-        home.setOnClickListener(new View.OnClickListener() {
+        tvHome = (TextView) findViewById(R.id.tvHome);
+        tvHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent home = new Intent(Login.this, MainActivity.class);
