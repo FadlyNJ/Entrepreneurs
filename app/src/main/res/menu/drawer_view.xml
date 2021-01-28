@@ -3,40 +3,40 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/home_fragment"
-            android:icon="@drawable/home"
+            android:icon="@drawable/ic_home"
             android:title="@string/home_fragment"
             android:checked="true" />
         <item
             android:id="@+id/start_fragment"
-            android:icon="@drawable/businessman"
+            android:icon="@drawable/ic_businessman"
             android:title="@string/start_fragment" />
         <item
             android:id="@+id/challenge_fragment"
-            android:icon="@drawable/trophy"
+            android:icon="@drawable/ic_trophy"
             android:title="@string/challenge_fragment" />
         <item
             android:id="@+id/academy_fragment"
-            android:icon="@drawable/academy"
+            android:icon="@drawable/ic_academy"
             android:title="@string/academy_fragment" />
         <item
             android:id="@+id/bootcamp_fragment"
-            android:icon="@drawable/fireplace"
+            android:icon="@drawable/ic_fireplace"
             android:title="@string/bootcamp_fragment" />
         <item
             android:id="@+id/group_fragment"
-            android:icon="@drawable/group"
+            android:icon="@drawable/ic_group"
             android:title="@string/group_fragment" />
         <item
             android:id="@+id/individual_fragment"
-            android:icon="@drawable/spy"
+            android:icon="@drawable/ic_spy"
             android:title="@string/coaching_fragment" />
         <item
             android:id="@+id/premiere_fragment"
-            android:icon="@drawable/hand"
+            android:icon="@drawable/ic_handshake"
             android:title="@string/premiere_fragment" />
         <item
             android:id="@+id/live_fragment"
-            android:icon="@drawable/camera"
+            android:icon="@drawable/ic_live"
             android:title="@string/live_fragment" />
     </group>
 </menu>

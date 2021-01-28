@@ -15,15 +15,12 @@
         android:layout_marginTop="60dp"
         android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/tvHome"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="ENTREPRENEURS."
-            android:textStyle="bold"
-            android:textSize="14pt"
-            android:textColor="@color/black"
-            android:typeface="monospace"/>
+        <ImageView
+            android:id="@+id/ivHome"
+            android:layout_width="265dp"
+            android:layout_height="?actionBarSize"
+            android:layout_gravity="center"
+            android:src="@drawable/thumbnail_entrepreneurs"/>
 
         <LinearLayout
             android:layout_marginTop="20dp"
@@ -58,7 +55,7 @@
             android:layout_marginTop="20dp"
             android:hint="Email Address"
             app:errorEnabled="true"
-            app:startIconDrawable="@drawable/user"
+            app:startIconDrawable="@drawable/ic_user"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -75,7 +72,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:hint="Password"
-            app:startIconDrawable="@drawable/key"
+            app:startIconDrawable="@drawable/ic_key"
             app:endIconMode="password_toggle"
             app:errorEnabled="true"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">

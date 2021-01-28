@@ -26,6 +26,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -40,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
     private MaterialToolbar toolbar;
     private NavigationView nvDrawer;
     private MaterialButton btnLogin, btnRegister;
-    private TextView tvHome;
+    private ImageView ivHome;
 
     private ActionBarDrawerToggle drawerToggle;
 
@@ -119,8 +120,8 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        tvHome = (TextView) findViewById(R.id.tvHome);
-        tvHome.setOnClickListener(new View.OnClickListener() {
+        ivHome = (ImageView) findViewById(R.id.ivHome);
+        ivHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent home = new Intent(MainActivity.this, MainActivity.class);

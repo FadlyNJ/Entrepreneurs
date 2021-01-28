@@ -21,16 +21,12 @@
             android:layout_marginBottom="40dp"
             android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/tvHome"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+            <ImageView
+                android:id="@+id/ivHome"
+                android:layout_width="280dp"
+                android:layout_height="?actionBarSize"
                 android:layout_gravity="center"
-                android:text="ENTREPRENEURS."
-                android:textColor="@color/black"
-                android:textSize="14pt"
-                android:textStyle="bold"
-                android:typeface="monospace" />
+                android:src="@drawable/thumbnail_entrepreneurs"/>
 
             <LinearLayout
                 android:layout_width="wrap_content"

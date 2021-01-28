@@ -20,4 +20,8 @@
     <string name="coaching_fragment">1-1 Coaching</string>
     <string name="premiere_fragment">Premiere</string>
     <string name="live_fragment">Live</string>
+
+    <!--Artikel-->
+    <string name="artikel_bisnis">Bagaimana Menerapkan Sistem Bisnis dalam Bisnis?</string>
+    <string name="isi_artikel_bisnis">Entrepreneurs.id- Jika Anda menginginkan perusahaan yang sukses, Anda perlu membuat sistem di mana seluruh pekerjaan</string>
 </resources>

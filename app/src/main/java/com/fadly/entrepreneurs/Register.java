@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -20,7 +21,8 @@ import com.google.android.material.textfield.TextInputLayout;
 import org.w3c.dom.Text;
 
 public class Register extends AppCompatActivity {
-    private TextView tvSignin, tvTerms, tvService, tvPrivacy, tvHome;
+    private TextView tvSignin, tvTerms, tvService, tvPrivacy;
+    private ImageView ivHome;
     private TextInputLayout tilEmail, tilPassword, tilFirst, tilLast, tilNick;
     private TextInputEditText txtEmail, txtPassword, txtFirst, txtLast, txtNick;
     private String email, password, first, last, nick;
@@ -52,8 +54,8 @@ public class Register extends AppCompatActivity {
             }
         });
 
-        tvHome = (TextView) findViewById(R.id.tvHome);
-        tvHome.setOnClickListener(new View.OnClickListener() {
+        ivHome = (ImageView) findViewById(R.id.ivHome);
+        ivHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent home = new Intent(Register.this, MainActivity.class);

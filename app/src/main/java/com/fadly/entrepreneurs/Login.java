@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -17,7 +18,8 @@ import com.google.android.material.textfield.TextInputLayout;
 
 public class Login extends AppCompatActivity {
     private MaterialButton btnLogin;
-    private TextView tvCreate, tvForgot, tvHome;
+    private TextView tvCreate, tvForgot;
+    private ImageView ivHome;
     private MaterialCheckBox checkRemember;
     private TextInputLayout tilEmail, tilPassword;
     private TextInputEditText txtEmail, txtPassword;
@@ -61,8 +63,8 @@ public class Login extends AppCompatActivity {
             }
         });
 
-        tvHome = (TextView) findViewById(R.id.tvHome);
-        tvHome.setOnClickListener(new View.OnClickListener() {
+        ivHome = (ImageView) findViewById(R.id.ivHome);
+        ivHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent home = new Intent(Login.this, MainActivity.class);
