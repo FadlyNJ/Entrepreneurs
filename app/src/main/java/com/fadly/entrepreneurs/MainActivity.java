@@ -191,25 +191,25 @@ public class MainActivity extends AppCompatActivity {
                 fragmentClass = StartFragment.class;
                 break;
             case R.id.challenge_fragment:
-                fragmentClass =ChallengeFragment.class;
+                fragmentClass = ChallengeFragment.class;
                 break;
             case R.id.academy_fragment:
-                fragmentClass =AcademyFragment.class;
+                fragmentClass = AcademyFragment.class;
                 break;
             case R.id.bootcamp_fragment:
-                fragmentClass =BootcampFragment.class;
+                fragmentClass = BootcampFragment.class;
                 break;
             case R.id.group_fragment:
-                fragmentClass =GroupFragment.class;
+                fragmentClass = GroupFragment.class;
                 break;
             case R.id.individual_fragment:
-                fragmentClass =IndividualFragment.class;
+                fragmentClass = IndividualFragment.class;
                 break;
             case R.id.premiere_fragment:
-                fragmentClass =PremiereFragment.class;
+                fragmentClass = PremiereFragment.class;
                 break;
             case R.id.live_fragment:
-                fragmentClass =LiveFragment.class;
+                fragmentClass = LiveFragment.class;
                 break;
             default:
                 fragmentClass = HomeFragment.class;

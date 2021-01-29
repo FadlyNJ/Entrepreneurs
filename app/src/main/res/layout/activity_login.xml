@@ -20,7 +20,7 @@
             android:layout_width="265dp"
             android:layout_height="?actionBarSize"
             android:layout_gravity="center"
-            android:src="@drawable/thumbnail_entrepreneurs"/>
+            android:src="@drawable/text_entrepreneurs"/>
 
         <LinearLayout
             android:layout_marginTop="20dp"
