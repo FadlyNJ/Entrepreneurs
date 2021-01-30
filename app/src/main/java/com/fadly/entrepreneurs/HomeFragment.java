@@ -21,17 +21,19 @@ import java.util.ArrayList;
 
 public class HomeFragment extends Fragment {
 
-    private RecyclerView recyclerViewArticle, recyclerViewBlog, recyclerViewCourse;
+    private RecyclerView recyclerViewArticle, recyclerViewBlog, recyclerViewCourse, recyclerViewForum;
+    private ForumAdapter forumAdapter;
+    private ArrayList<Forum> forumArrayList;
     private ArticleAdapter articleAdapter;
     private ArrayList<Article> articleArrayList;
     private BlogAdapter blogAdapter;
     private ArrayList<Blog> blogArrayList;
     private CourseAdapter courseAdapter;
     private ArrayList<Course> courseArrayList;
-    private TextInputLayout tilSort;
-    private AutoCompleteTextView sortCourse;
     private ArrayAdapter<String> sortAdapter;
     private ArrayList<String> sortArrayList;
+    private TextInputLayout tilSort;
+    private AutoCompleteTextView sortCourse;
 
     public HomeFragment() {
         // Required empty public constructor
@@ -84,6 +86,15 @@ public class HomeFragment extends Fragment {
         RecyclerView.LayoutManager courseLayoutManager = new LinearLayoutManager(getActivity());
         recyclerViewCourse.setLayoutManager(courseLayoutManager);
         recyclerViewCourse.setAdapter(courseAdapter);
+
+        //Recycler View Forum
+        addDataForum();
+        recyclerViewForum = (RecyclerView) view.findViewById(R.id.forum_recycler);
+        forumAdapter = new ForumAdapter(forumArrayList);
+        RecyclerView.LayoutManager forumLayoutManager = new LinearLayoutManager(getActivity());
+        recyclerViewForum.setLayoutManager(forumLayoutManager);
+        recyclerViewForum.setAdapter(forumAdapter);
+        recyclerViewForum.addItemDecoration(itemDecoration);
 
         return view;
     }
@@ -143,6 +154,42 @@ public class HomeFragment extends Fragment {
                 "FOODPRENEUR: 3 Rahasia Membuka 200 Cabang Dalam Waktu 5 Bulan Hanya Dengan Modal 5 Juta",
                 "1 Lesson",
                 "Rp45.000"));
+
+    }
+
+    void addDataForum(){
+        forumArrayList = new ArrayList<>();
+        forumArrayList.add(new Forum(R.drawable.avatar1,
+                "Bagaimana Belajar Mengatakan ‘Tidak’ Dapat Meningkatkan Bisnis Anda",
+                "Edrus replied 2 months ago",
+                "1 member ● 1 reply",
+                "Kata “tidak” adalah kata unik yang meskipun memiliki konotasi negatif, namun memiliki…"));
+        forumArrayList.add(new Forum(R.drawable.avatar1,
+                "5 Ide Memulai Bisnis di Perguruan Tinggi",
+                "Edrus replied 2 months ago",
+                "1 member ● 1 reply",
+                "Mendapatkan bisnis Anda sendiri adalah usaha yang sangat bertanggung jawab namun membebas…"));
+        forumArrayList.add(new Forum(R.drawable.avatar1,
+                "5 Faktor Yang Memungkinkan Kepercayaan Dalam Kondisi Apa Pun",
+                "Edrus replied 2 months ago",
+                "1 member ● 1 reply",
+                "Kepercayaan memiliki pintu depan dan pintu belakang, itulah sebabnya banyak orang menghab…"));
+        forumArrayList.add(new Forum(R.drawable.avatar1,
+                "10 Skill Negosiasi Yang Harus Dimiliki Setiap Pengusaha",
+                "Edrus replied 2 months, 1 week ago",
+                "1 member ● 1 reply",
+                "Kita semua ingin mendapatkan sebanyak yang kita bisa dalam setiap kesepakatan atau transa…"));
+        forumArrayList.add(new Forum(R.drawable.avatar1,
+                "Sumber Daya Terbaik Di Mana Anda Dapat Menemukan Ide Bisnis",
+                "Edrus replied 2 months, 1 week ago",
+                "1 member ● 1 reply",
+                "Peluang dan ide bisnis adalah titik awal untuk setiap bisnis. Mereka penting karena energ…"));
+        forumArrayList.add(new Forum(R.drawable.avatar1,
+                "Entrepreneur Success: Tricks For New Players",
+                "Edrus replied 2 month, 3 weeks ago",
+                "1 member ● 1 reply",
+                "Ask any entrepreneur and they’ll tell you starting a business is never an easy task. It…"));
+
 
     }
 }

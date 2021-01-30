@@ -74,7 +74,7 @@
                         android:textAllCaps="false"
                         app:icon="@drawable/ic_add"
                         app:iconTint="#007cff"
-                        style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"/>
+                        style="@style/Widget.MaterialComponents.Button.TextButton.Icon"/>
 
                 </LinearLayout>
 
