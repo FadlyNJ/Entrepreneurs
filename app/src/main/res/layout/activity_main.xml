@@ -26,7 +26,7 @@
                 app:menu="@menu/top_app_bar">
 
                 <ImageView
-                    android:id="@+id/ivHome"
+                    android:id="@+id/iv_home"
                     android:layout_width="200dp"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
@@ -38,7 +38,7 @@
         </com.google.android.material.appbar.AppBarLayout>
 
         <FrameLayout
-            android:id="@+id/flContent"
+            android:id="@+id/flcontent"
             app:layout_behavior="@string/appbar_scrolling_view_behavior"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
@@ -46,7 +46,7 @@
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
     <com.google.android.material.navigation.NavigationView
-        android:id="@+id/navView"
+        android:id="@+id/nav_view"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:background="#191919"
@@ -57,7 +57,7 @@
         app:headerLayout="@layout/nav_header">
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnLogin"
+            android:id="@+id/btn_login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center|bottom"
@@ -73,7 +73,7 @@
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnRegister"
+            android:id="@+id/btn_register"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center|bottom"

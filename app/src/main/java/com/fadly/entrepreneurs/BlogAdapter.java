@@ -26,8 +26,8 @@ public class BlogAdapter extends RecyclerView.Adapter<BlogAdapter.BlogViewHolder
 
         public BlogViewHolder(View itemView) {
             super(itemView);
-            ivThumbnail = (ImageView) itemView.findViewById(R.id.ivThumbnail);
-            tvTitle = (TextView) itemView.findViewById(R.id.tvTitle);
+            ivThumbnail = (ImageView) itemView.findViewById(R.id.iv_thumbnail);
+            tvTitle = (TextView) itemView.findViewById(R.id.tv_title);
             tvDate = (TextView) itemView.findViewById(R.id.tvDate);
             itemList = (RelativeLayout) itemView.findViewById(R.id.article_list);
         }

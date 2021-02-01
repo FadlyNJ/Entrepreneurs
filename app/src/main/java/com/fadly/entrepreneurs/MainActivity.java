@@ -1,39 +1,25 @@
 package com.fadly.entrepreneurs;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.ActionBarDrawerToggle;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import android.app.LauncherActivity;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Configuration;
-import android.graphics.Color;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.button.MaterialButton;
-import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends AppCompatActivity {
@@ -57,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayShowTitleEnabled(false);
 
         // Find drawer view
-        nvDrawer = (NavigationView) findViewById(R.id.navView);
+        nvDrawer = (NavigationView) findViewById(R.id.nav_view);
         // Setup drawer view
         setupDrawerContent(nvDrawer);
 
@@ -76,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
         loadFragment(new HomeFragment());
 
         //Find drawer header
-        NavigationView navigationView = (NavigationView) findViewById(R.id.navView);
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         View headerview = navigationView.getHeaderView(0);
 
         //Set click on header item
@@ -90,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
                 //Forum Fragment called
                 getSupportFragmentManager().beginTransaction()
                     .setReorderingAllowed(true)
-                    .replace(R.id.flContent, ForumFragment.class, null)
+                    .replace(R.id.flcontent, ForumFragment.class, null)
                     .commit();
 
                 //Close Drawer
@@ -99,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
 
         });
 
-        btnLogin = (MaterialButton) findViewById(R.id.btnLogin);
+        btnLogin = (MaterialButton) findViewById(R.id.btn_login);
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -109,7 +95,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        btnRegister = (MaterialButton) findViewById(R.id.btnRegister);
+        btnRegister = (MaterialButton) findViewById(R.id.btn_register);
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -120,13 +106,12 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        ivHome = (ImageView) findViewById(R.id.ivHome);
+        ivHome = (ImageView) findViewById(R.id.iv_home);
         ivHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent home = new Intent(MainActivity.this, MainActivity.class);
-                startActivity(home);
-                finish();
+                Fragment mFragment = new HomeFragment();
+                getSupportFragmentManager().beginTransaction().replace(R.id.flcontent, mFragment).commit();
 
             }
         });
@@ -222,7 +207,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         FragmentManager fragmentManager = getSupportFragmentManager();
-        fragmentManager.beginTransaction().replace(R.id.flContent, fragment).commit();
+        fragmentManager.beginTransaction().replace(R.id.flcontent, fragment).commit();
 
         // Highlight the selected item has been done by NavigationView
         menuItem.setChecked(true);
@@ -241,7 +226,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void loadFragment(Fragment fragment) {
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.flContent, fragment);
+        transaction.replace(R.id.flcontent, fragment);
         transaction.commit();
     }
 

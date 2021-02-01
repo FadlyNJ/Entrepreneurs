@@ -29,12 +29,12 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
-                <ImageView
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/iv_thumbnail"
                     android:layout_margin="8dp"
-                    android:id="@+id/ivThumbnail"
-                    android:src="@drawable/avatar1"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"/>
+                    android:layout_width="52dp"
+                    android:layout_height="52dp"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -42,37 +42,33 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/tvTitle"
+                        android:id="@+id/tv_title"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="8dp"
-                        android:text="Bagaimana Belajar Mengatakan ‘Tidak’ Dapat Meningkatkan Bisnis Anda"
                         android:textColor="#000000"/>
 
                     <TextView
-                        android:id="@+id/tvAuthor"
+                        android:id="@+id/tv_author"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="8dp"
                         android:layout_marginRight="8dp"
-                        android:layout_marginBottom="8dp"
-                        android:text="Edrus replied 2 months ago"/>
+                        android:layout_marginBottom="8dp"/>
 
                     <TextView
-                        android:id="@+id/tvRelease"
+                        android:id="@+id/tv_release"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_margin="8dp"
-                        android:text="1 Member . 1 Reply"/>
+                        android:layout_margin="8dp"/>
 
                     <TextView
-                        android:id="@+id/tvContent"
+                        android:id="@+id/tv_content"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="8dp"
                         android:ellipsize="end"
-                        android:maxLines="2"
-                        android:text="Kata “tidak” adalah kata unik yang meskipun memiliki konotasi negatif, namun memiliki..."/>
+                        android:maxLines="2"/>
 
                 </LinearLayout>
 

@@ -3,7 +3,6 @@ package com.fadly.entrepreneurs;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -30,8 +29,8 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.CourseView
 
         public CourseViewHolder(View itemView) {
             super(itemView);
-            ivThumbnail = (ImageView) itemView.findViewById(R.id.ivThumbnail);
-            tvTitle = (TextView) itemView.findViewById(R.id.tvTitle);
+            ivThumbnail = (ImageView) itemView.findViewById(R.id.iv_thumbnail);
+            tvTitle = (TextView) itemView.findViewById(R.id.tv_title);
             tvLesson = (TextView) itemView.findViewById(R.id.tvLesson);
             tvPrice = (TextView) itemView.findViewById(R.id.tvPrice);
             btnAdd = (MaterialButton) itemView.findViewById(R.id.btnAdd);

@@ -11,6 +11,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 public class ForumAdapter extends RecyclerView.Adapter<ForumAdapter.ForumViewHolder>{
 
     private ArrayList<Forum> arrayList;
@@ -20,17 +22,17 @@ public class ForumAdapter extends RecyclerView.Adapter<ForumAdapter.ForumViewHol
     }
 
     public class ForumViewHolder extends RecyclerView.ViewHolder {
-        private ImageView ivThumbnail;
+        private CircleImageView ivThumbnail;
         private TextView tvTitle, tvRelease, tvContent, tvAuthor;
         private RelativeLayout itemList;
 
         public ForumViewHolder(View itemView) {
             super(itemView);
-            ivThumbnail = (ImageView) itemView.findViewById(R.id.ivThumbnail);
-            tvTitle = (TextView) itemView.findViewById(R.id.tvTitle);
-            tvAuthor = (TextView) itemView.findViewById(R.id.tvAuthor);
-            tvRelease = (TextView) itemView.findViewById(R.id.tvRelease);
-            tvContent = (TextView) itemView.findViewById(R.id.tvContent);
+            ivThumbnail = (CircleImageView) itemView.findViewById(R.id.iv_thumbnail);
+            tvTitle = (TextView) itemView.findViewById(R.id.tv_title);
+            tvAuthor = (TextView) itemView.findViewById(R.id.tv_author);
+            tvRelease = (TextView) itemView.findViewById(R.id.tv_release);
+            tvContent = (TextView) itemView.findViewById(R.id.tv_content);
             itemList = (RelativeLayout) itemView.findViewById(R.id.forum_list);
         }
     }

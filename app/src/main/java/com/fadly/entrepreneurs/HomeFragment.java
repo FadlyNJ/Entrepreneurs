@@ -1,7 +1,10 @@
 package com.fadly.entrepreneurs;
 
+import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
 
+import androidx.cardview.widget.CardView;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DividerItemDecoration;
@@ -13,11 +16,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
+import android.widget.ImageView;
+import android.widget.TextView;
 
+import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputLayout;
 
 import java.util.ArrayList;
-
 
 public class HomeFragment extends Fragment {
 
@@ -34,9 +39,14 @@ public class HomeFragment extends Fragment {
     private ArrayList<String> sortArrayList;
     private TextInputLayout tilSort;
     private AutoCompleteTextView sortCourse;
+    private MaterialButton btnGrid, btnList, btnForum, btnBlog;
+    private TextView tvBlog;
+    private ImageView ivLogo;
+    private CardView cardStart, cardBlog;
 
     public HomeFragment() {
         // Required empty public constructor
+
     }
 
 
@@ -96,7 +106,66 @@ public class HomeFragment extends Fragment {
         recyclerViewForum.setAdapter(forumAdapter);
         recyclerViewForum.addItemDecoration(itemDecoration);
 
+        btnGrid = (MaterialButton) view.findViewById(R.id.btn_grid);
+        btnGrid.setChecked(true);
+
+        btnForum = (MaterialButton) view.findViewById(R.id.btn_forum);
+        btnForum.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Fragment mFragment = new ForumFragment();
+                getParentFragmentManager().beginTransaction().replace(R.id.flcontent, mFragment).commit();
+            }
+        });
+
+        cardStart = (CardView) view.findViewById(R.id.card_start);
+        cardStart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Fragment mFragment = new StartFragment();
+                getParentFragmentManager().beginTransaction().replace(R.id.flcontent, mFragment).commit();
+            }
+        });
+
+        cardBlog = (CardView) view.findViewById(R.id.card_blog);
+        cardBlog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Fragment mFragment = new AcademyFragment();
+                getParentFragmentManager().beginTransaction().replace(R.id.flcontent, mFragment).commit();
+            }
+        });
+
+        btnBlog = (MaterialButton) view.findViewById(R.id.btn_blog);
+        btnBlog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Fragment mFragment = new AcademyFragment();
+                getParentFragmentManager().beginTransaction().replace(R.id.flcontent, mFragment).commit();
+            }
+        });
+
+        tvBlog = (TextView) view.findViewById(R.id.tv_blog);
+        tvBlog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Fragment mFragment = new AcademyFragment();
+                getParentFragmentManager().beginTransaction().replace(R.id.flcontent, mFragment).commit();
+            }
+        });
+
+        ivLogo = (ImageView) view.findViewById(R.id.iv_logo);
+        ivLogo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Fragment mFragment = new HomeFragment();
+                getParentFragmentManager().beginTransaction().replace(R.id.flcontent, mFragment).commit();
+
+            }
+        });
+
         return view;
+
     }
 
     void addSortList(){
@@ -161,35 +230,34 @@ public class HomeFragment extends Fragment {
         forumArrayList = new ArrayList<>();
         forumArrayList.add(new Forum(R.drawable.avatar1,
                 "Bagaimana Belajar Mengatakan ‘Tidak’ Dapat Meningkatkan Bisnis Anda",
+                "1 member · 1 reply",
                 "Edrus replied 2 months ago",
-                "1 member ● 1 reply",
                 "Kata “tidak” adalah kata unik yang meskipun memiliki konotasi negatif, namun memiliki…"));
         forumArrayList.add(new Forum(R.drawable.avatar1,
                 "5 Ide Memulai Bisnis di Perguruan Tinggi",
+                "1 member · 1 reply",
                 "Edrus replied 2 months ago",
-                "1 member ● 1 reply",
                 "Mendapatkan bisnis Anda sendiri adalah usaha yang sangat bertanggung jawab namun membebas…"));
         forumArrayList.add(new Forum(R.drawable.avatar1,
                 "5 Faktor Yang Memungkinkan Kepercayaan Dalam Kondisi Apa Pun",
+                "1 member · 1 reply",
                 "Edrus replied 2 months ago",
-                "1 member ● 1 reply",
                 "Kepercayaan memiliki pintu depan dan pintu belakang, itulah sebabnya banyak orang menghab…"));
         forumArrayList.add(new Forum(R.drawable.avatar1,
                 "10 Skill Negosiasi Yang Harus Dimiliki Setiap Pengusaha",
+                "1 member · 1 reply",
                 "Edrus replied 2 months, 1 week ago",
-                "1 member ● 1 reply",
                 "Kita semua ingin mendapatkan sebanyak yang kita bisa dalam setiap kesepakatan atau transa…"));
         forumArrayList.add(new Forum(R.drawable.avatar1,
                 "Sumber Daya Terbaik Di Mana Anda Dapat Menemukan Ide Bisnis",
+                "1 member · 1 reply",
                 "Edrus replied 2 months, 1 week ago",
-                "1 member ● 1 reply",
                 "Peluang dan ide bisnis adalah titik awal untuk setiap bisnis. Mereka penting karena energ…"));
         forumArrayList.add(new Forum(R.drawable.avatar1,
                 "Entrepreneur Success: Tricks For New Players",
+                "1 member · 1 reply",
                 "Edrus replied 2 month, 3 weeks ago",
-                "1 member ● 1 reply",
                 "Ask any entrepreneur and they’ll tell you starting a business is never an easy task. It…"));
-
 
     }
 }
