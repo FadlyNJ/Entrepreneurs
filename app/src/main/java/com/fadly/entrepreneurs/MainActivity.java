@@ -16,7 +16,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.PopupMenu;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.button.MaterialButton;
@@ -28,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     private NavigationView nvDrawer;
     private MaterialButton btnLogin, btnRegister;
     private ImageView ivHome;
+    private View cart;
 
     private ActionBarDrawerToggle drawerToggle;
 
@@ -68,6 +71,8 @@ public class MainActivity extends AppCompatActivity {
         //Set click on header item
         LinearLayout header = (LinearLayout) headerview.findViewById(R.id.nav_header);
         TextView forum = (TextView) headerview.findViewById(R.id.forum_fragment);
+
+        cart = (View)findViewById(R.id.cart);
 
         forum.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -143,11 +148,11 @@ public class MainActivity extends AppCompatActivity {
         if (drawerToggle.onOptionsItemSelected(item)) {
             return true;
         }
-        /*switch (item.getItemId()){
+        switch (item.getItemId()){
             case R.id.cart :
-                Toast.makeText(this, "Developed by : NUGIEEE :D", Toast.LENGTH_SHORT).show();
+                popupCart();
                 break;
-        }*/
+        }
         return super.onOptionsItemSelected(item);
     }
 
@@ -223,11 +228,31 @@ public class MainActivity extends AppCompatActivity {
         return super.onCreateOptionsMenu(menu);
     }
 
-
-    public void loadFragment(Fragment fragment) {
+    void loadFragment(Fragment fragment) {
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.flcontent, fragment);
         transaction.commit();
+    }
+
+    void popupCart(){
+        PopupMenu popup = new PopupMenu(MainActivity.this, cart);
+        //Inflating the Popup using xml file
+        popup.getMenuInflater()
+                .inflate(R.menu.popup_cart, popup.getMenu());
+
+        //registering popup with OnMenuItemClickListener
+        popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+            public boolean onMenuItemClick(MenuItem item) {
+                Toast.makeText(
+                        MainActivity.this,
+                        "You Clicked : " + item.getTitle(),
+                        Toast.LENGTH_SHORT
+                ).show();
+                return true;
+            }
+        });
+
+        popup.show();
     }
 
 }
