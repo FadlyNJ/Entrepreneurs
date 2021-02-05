@@ -39,6 +39,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        cart = (View)findViewById(R.id.cart);
+
         // Set the Custom Toolbar to replace the ActionBar.
         toolbar = (MaterialToolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -72,7 +74,6 @@ public class MainActivity extends AppCompatActivity {
         LinearLayout header = (LinearLayout) headerview.findViewById(R.id.nav_header);
         TextView forum = (TextView) headerview.findViewById(R.id.forum_fragment);
 
-        cart = (View)findViewById(R.id.cart);
 
         forum.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -148,11 +149,18 @@ public class MainActivity extends AppCompatActivity {
         if (drawerToggle.onOptionsItemSelected(item)) {
             return true;
         }
+
         switch (item.getItemId()){
+
             case R.id.cart :
-                popupCart();
+                PopUpCart popUpCart = new PopUpCart();
+                popUpCart.showPopupWindow(cart);
+                break;
+
+            default:
                 break;
         }
+
         return super.onOptionsItemSelected(item);
     }
 
@@ -232,27 +240,6 @@ public class MainActivity extends AppCompatActivity {
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.flcontent, fragment);
         transaction.commit();
-    }
-
-    void popupCart(){
-        PopupMenu popup = new PopupMenu(MainActivity.this, cart);
-        //Inflating the Popup using xml file
-        popup.getMenuInflater()
-                .inflate(R.menu.popup_cart, popup.getMenu());
-
-        //registering popup with OnMenuItemClickListener
-        popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
-            public boolean onMenuItemClick(MenuItem item) {
-                Toast.makeText(
-                        MainActivity.this,
-                        "You Clicked : " + item.getTitle(),
-                        Toast.LENGTH_SHORT
-                ).show();
-                return true;
-            }
-        });
-
-        popup.show();
     }
 
 }

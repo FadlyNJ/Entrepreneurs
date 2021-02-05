@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -7,75 +7,67 @@
     android:layout_height="wrap_content"
     android:id="@+id/forum_list"
     android:background="#fafbfd"
-    android:orientation="vertical">
+    android:focusable="true"
+    android:clickable="true"
+    app:strokeWidth="0dp"
+    app:strokeColor="#fafbfd"
+    app:cardElevation="0dp">
 
-    <androidx.cardview.widget.CardView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#fafbfd"
-        android:focusable="true"
-        android:clickable="true"
-        app:strokeWidth="0dp"
-        app:strokeColor="#fafbfd"
-        app:cardElevation="0dp">
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="horizontal">
+
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/iv_thumbnail"
+                android:layout_margin="8dp"
+                android:layout_width="52dp"
+                android:layout_height="52dp"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="vertical">
 
-
-                <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/iv_thumbnail"
-                    android:layout_margin="8dp"
-                    android:layout_width="52dp"
-                    android:layout_height="52dp"/>
-
-                <LinearLayout
+                <TextView
+                    android:id="@+id/tv_title"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:layout_margin="8dp"
+                    android:textColor="#000000"/>
 
-                    <TextView
-                        android:id="@+id/tv_title"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="8dp"
-                        android:textColor="#000000"/>
+                <TextView
+                    android:id="@+id/tv_author"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginBottom="8dp"/>
 
-                    <TextView
-                        android:id="@+id/tv_author"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="8dp"
-                        android:layout_marginRight="8dp"
-                        android:layout_marginBottom="8dp"/>
+                <TextView
+                    android:id="@+id/tv_release"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"/>
 
-                    <TextView
-                        android:id="@+id/tv_release"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="8dp"/>
-
-                    <TextView
-                        android:id="@+id/tv_content"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="8dp"
-                        android:ellipsize="end"
-                        android:maxLines="2"/>
-
-                </LinearLayout>
+                <TextView
+                    android:id="@+id/tv_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:ellipsize="end"
+                    android:maxLines="2"/>
 
             </LinearLayout>
 
         </LinearLayout>
 
-    </androidx.cardview.widget.CardView>
+    </LinearLayout>
 
-</RelativeLayout>
+</androidx.cardview.widget.CardView>
