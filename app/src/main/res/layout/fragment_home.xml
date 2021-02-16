@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/fragment_home"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -11,8 +11,8 @@
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scrollbars="vertical"
-        android:fadeScrollbars="false">
+        android:fadeScrollbars="false"
+        android:scrollbars="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -24,23 +24,7 @@
                 android:id="@+id/article_recycler"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical"/>
-
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/card_start"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="8dp"
-                android:clickable="true"
-                android:focusable="true">
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:src="@drawable/thumbnail_start"
-                    android:contentDescription="@string/artikel_bisnis"/>
-
-            </com.google.android.material.card.MaterialCardView>
+                android:orientation="vertical" />
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/card_blog"
@@ -62,104 +46,88 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
-                android:textSize="8pt"
-                android:textColor="#000000"
+                android:text="@string/artikel_bisnis"
                 android:textAppearance="?attr/textAppearanceHeadline6"
-                android:text="@string/artikel_bisnis"/>
+                android:textColor="#000000"
+                android:textSize="8pt" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
-                android:text="January 19, 2021  •  Success"/>
+                android:text="January 19, 2021  •  Success" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
-                android:textSize="7pt"
+                android:text="@string/isi_artikel_bisnis"
                 android:textAppearance="?attr/textAppearanceHeadline1"
                 android:textColor="#000000"
-                android:text="@string/isi_artikel_bisnis"/>
+                android:textSize="7pt" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_blog"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
-                android:textColor="#000000"
                 android:text="READ MORE"
-                style="@style/Widget.MaterialComponents.Button.TextButton"/>
+                android:textColor="#000000" />
 
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/blog_recycler"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical"/>
+                android:orientation="vertical" />
 
-            <LinearLayout
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_start"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
-                android:gravity="end"
-                android:orientation="horizontal">
+                android:clickable="true"
+                android:focusable="true">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:contentDescription="@string/artikel_bisnis"
+                    android:src="@drawable/thumbnail_start" />
+
+            </com.google.android.material.card.MaterialCardView>
+
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/sort_course"
-                android:layout_width="280dp"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="8dp"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+                android:layout_margin="8dp">
 
                 <AutoCompleteTextView
                     android:id="@+id/sort_list"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:focusable="false"
-                    android:inputType="none"/>
+                    android:inputType="none" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.button.MaterialButtonToggleGroup
-                android:id="@+id/layoutToggleButton"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="8dp"
-                app:singleSelection="true">
-
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btn_grid"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:contentDescription="Grid View"
-                    app:icon="@drawable/ic_grid"
-                    style="@style/Widget.App.Button.OutlinedButton.IconOnly"/>
-
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btn_list"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:contentDescription="List View"
-                    app:icon="@drawable/ic_menu"
-                    style="@style/Widget.App.Button.OutlinedButton.IconOnly"/>
-
-            </com.google.android.material.button.MaterialButtonToggleGroup>
-
-            </LinearLayout>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/course_recycler"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"/>
+                android:orientation="vertical" />
 
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="80dp"
                 android:layout_marginLeft="8dp"
+                android:layout_marginTop="80dp"
                 android:layout_marginRight="8dp"
                 android:background="#ffffff"
                 android:orientation="vertical">
@@ -173,29 +141,29 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:padding="12dp"
-                        android:textColor="#000000"
-                        android:textSize="10pt"
+                        android:text="Forums"
                         android:textAppearance="?attr/textAppearanceHeadline6"
-                        android:text="Forums"/>
+                        android:textColor="#000000"
+                        android:textSize="10pt" />
 
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/btn_forum"
+                        style="@style/Widget.MaterialComponents.Button.TextButton"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="170dp"
                         android:text="All Forums"
-                        android:textColor="#007cff"
-                        style="@style/Widget.MaterialComponents.Button.TextButton"/>
+                        android:textColor="#007cff" />
 
                 </LinearLayout>
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/forum_recycler"
-                    android:scrollbars="vertical"
-                    android:overScrollMode="never"
                     android:layout_width="match_parent"
                     android:layout_height="700dp"
-                    android:orientation="vertical"/>
+                    android:orientation="vertical"
+                    android:overScrollMode="never"
+                    android:scrollbars="vertical" />
 
             </LinearLayout>
 
@@ -211,16 +179,16 @@
                     android:id="@+id/iv_logo"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/logo"
                     android:layout_marginTop="30dp"
                     android:clickable="true"
-                    android:focusable="true"/>
+                    android:focusable="true"
+                    android:src="@drawable/logo" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="© 2021 - Entrepreneurs Id"
-                    android:layout_marginTop="30dp"/>
+                    android:layout_marginTop="30dp"
+                    android:text="© 2021 - Entrepreneurs Id" />
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -232,32 +200,32 @@
                     <ImageView
                         android:layout_width="24dp"
                         android:layout_height="24dp"
-                        android:src="@drawable/ic_round_email"
-                        android:layout_marginRight="8dp"
                         android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
                         android:clickable="true"
+                        android:contentDescription="Contact our Email !"
                         android:focusable="true"
-                        android:contentDescription="Contact our Email !"/>
+                        android:src="@drawable/ic_round_email" />
 
                     <ImageView
                         android:layout_width="24dp"
                         android:layout_height="24dp"
-                        android:src="@drawable/ic_round_instagram"
-                        android:layout_marginRight="8dp"
                         android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
                         android:clickable="true"
+                        android:contentDescription="Follow Our Instagram"
                         android:focusable="true"
-                        android:contentDescription="Follow Our Instagram"/>
+                        android:src="@drawable/ic_round_instagram" />
 
                     <ImageView
                         android:layout_width="24dp"
                         android:layout_height="24dp"
-                        android:src="@drawable/ic_round_youtube"
-                        android:layout_marginRight="8dp"
                         android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
                         android:clickable="true"
+                        android:contentDescription="Subscribe to Our Youtube Channel"
                         android:focusable="true"
-                        android:contentDescription="Subscribe to Our Youtube Channel"/>
+                        android:src="@drawable/ic_round_youtube" />
 
                 </LinearLayout>
 

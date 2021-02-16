@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.drawerlayout.widget.DrawerLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:id="@+id/drawer_layout">
+    android:layout_height="match_parent">
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
@@ -15,14 +14,14 @@
         <com.google.android.material.appbar.AppBarLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fitsSystemWindows="true"
             android:backgroundTint="#ffffff"
+            android:fitsSystemWindows="true"
             app:liftOnScroll="true">
 
             <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                android:id="@+id/toolbar"
                 app:menu="@menu/top_app_bar">
 
                 <ImageView
@@ -30,7 +29,7 @@
                     android:layout_width="200dp"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
-                    android:src="@drawable/text_entrepreneurs"/>
+                    android:src="@drawable/text_entrepreneurs" />
 
 
             </com.google.android.material.appbar.MaterialToolbar>
@@ -39,9 +38,9 @@
 
         <FrameLayout
             android:id="@+id/flcontent"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
@@ -49,43 +48,43 @@
         android:id="@+id/nav_view"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:background="#191919"
         android:layout_gravity="start"
-        app:menu="@menu/drawer_view"
-        app:itemTextColor="@color/drawer_item"
+        android:background="#191919"
+        app:headerLayout="@layout/nav_header"
         app:itemIconTint="@color/drawer_item"
-        app:headerLayout="@layout/nav_header">
+        app:itemTextColor="@color/drawer_item"
+        app:menu="@menu/drawer_view">
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_login"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center|bottom"
             android:layout_marginLeft="18dp"
             android:layout_marginRight="18dp"
             android:layout_marginBottom="80dp"
-            android:textColor="#a1abb5"
-            android:textAllCaps="false"
             android:text="@string/sign_in"
-            app:cornerRadius="20dp"
-            app:strokeColor="#a1abb5"
+            android:textAllCaps="false"
+            android:textColor="#a1abb5"
             app:backgroundTint="#191919"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
+            app:cornerRadius="20dp"
+            app:strokeColor="#a1abb5" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_register"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center|bottom"
             android:layout_marginLeft="18dp"
             android:layout_marginRight="18dp"
             android:layout_marginBottom="30dp"
-            android:textColor="@color/white"
-            android:textAllCaps="false"
             android:text="@string/sign_up"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
             app:backgroundTint="#007cff"
-            app:cornerRadius="20dp"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
+            app:cornerRadius="20dp" />
 
     </com.google.android.material.navigation.NavigationView>
 

@@ -1,30 +1,28 @@
 package com.fadly.entrepreneurs;
 
-import android.content.Intent;
-
 public class Article {
-    private Integer image;
-    private String title;
+    Integer articleImage;
+    String articleTitle;
 
-    public Article(Integer image, String title){
-        this.image = image;
-        this.title = title;
+    public Article(Integer articleImage, String articleTitle) {
+        this.articleImage = articleImage;
+        this.articleTitle = articleTitle;
     }
 
-    public Integer getImage(){
-        return image;
+    public Integer getArticleImage() {
+        return articleImage;
     }
 
-    public void setImage(Integer image){
-        this.image = image;
+    public void setArticleImage(Integer articleImage) {
+        this.articleImage = articleImage;
     }
 
-    public String getTitle(){
-        return title;
+    public String getArticleTitle() {
+        return articleTitle;
     }
 
-    public void setTitle(String title){
-        this.title = title;
+    public void setArticleTitle(String articleTitle) {
+        this.articleTitle = articleTitle;
     }
 
 }

@@ -14,7 +14,7 @@ import com.google.android.material.checkbox.MaterialCheckBox;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
-public class Login extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
     private MaterialButton btnLogin;
     private TextView tvCreate, tvForgot;
     private ImageView ivHome;
@@ -43,7 +43,7 @@ public class Login extends AppCompatActivity {
         tvCreate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent register = new Intent(Login.this, Register.class);
+                Intent register = new Intent(LoginActivity.this, RegisterActivity.class);
                 startActivity(register);
                 finish();
 
@@ -54,7 +54,7 @@ public class Login extends AppCompatActivity {
         tvForgot.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent forgot = new Intent(Login.this, Register.class);
+                Intent forgot = new Intent(LoginActivity.this, RegisterActivity.class);
                 startActivity(forgot);
                 finish();
 
@@ -65,7 +65,7 @@ public class Login extends AppCompatActivity {
         ivHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent home = new Intent(Login.this, MainActivity.class);
+                Intent home = new Intent(LoginActivity.this, MainActivity.class);
                 home.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(home);
 
@@ -74,7 +74,7 @@ public class Login extends AppCompatActivity {
 
     }
 
-    private void validateData(){
+    private void validateData() {
 
         //Initialization Email variables
         tilEmail = (TextInputLayout) findViewById(R.id.tilEmail);
@@ -87,42 +87,41 @@ public class Login extends AppCompatActivity {
         password = txtPassword.getText().toString();
 
         //Check email input, if empty will show error message
-        if(email.isEmpty()){
+        if (email.isEmpty()) {
             tilEmail.setError("Please input your email address");
-        }else{
-            if (!email.isEmpty()){
+        } else {
+            if (!email.isEmpty()) {
                 tilEmail.setError(null);
             }
         }
 
         //Check password input, if empty will show error message
-        if(password.isEmpty()){
+        if (password.isEmpty()) {
             tilPassword.setError("Please input your password");
-        }else{
-            if (!password.isEmpty()){
+        } else {
+            if (!password.isEmpty()) {
                 tilPassword.setError(null);
             }
         }
 
     }
 
-    private void loginCheck(){
+    private void loginCheck() {
 
         txtPassword = (TextInputEditText) findViewById(R.id.txtPassword);
         password = txtPassword.getText().toString();
         txtEmail = (TextInputEditText) findViewById(R.id.txtEmail);
         email = txtEmail.getText().toString();
 
-        if(email.equals("fadly")
-                &&password.equals("fadly")){
+        if (email.equals("fadly")
+                && password.equals("fadly")) {
 
-            Toast.makeText(Login.this, "LOGIN BERHASIL :D", Toast.LENGTH_LONG).show();
-            Intent login = new Intent(Login.this, MainActivity.class);
+            Toast.makeText(LoginActivity.this, "LOGIN BERHASIL :D", Toast.LENGTH_LONG).show();
+            Intent login = new Intent(LoginActivity.this, MainActivity.class);
             login.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(login);
 
-        }
-        else{
+        } else {
             tilEmail.setError("Wrong Password / Username");
             tilPassword.setError("Wrong Password / Username");
         }

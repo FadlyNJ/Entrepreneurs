@@ -1,46 +1,46 @@
 package com.fadly.entrepreneurs;
 
 public class Course {
-    private Integer image;
-    private String lesson, title, price;
+    Integer courseImage;
+    String courseLesson, courseTitle, coursePrice;
 
-    public Course(Integer image, String title, String lesson, String price){
-        this.image = image;
-        this.title = title;
-        this.price = price;
-        this.lesson = lesson;
+    public Course(Integer courseImage, String courseTitle, String courseLesson, String coursePrice) {
+        this.courseImage = courseImage;
+        this.courseTitle = courseTitle;
+        this.coursePrice = coursePrice;
+        this.courseLesson = courseLesson;
     }
 
-    public Integer getImage(){
-        return image;
+    public Integer getCourseImage() {
+        return courseImage;
     }
 
-    public void setImage(Integer image){
-        this.image = image;
+    public void setCourseImage(Integer courseImage) {
+        this.courseImage = courseImage;
     }
 
-    public String getTitle(){
-        return title;
+    public String getCourseTitle() {
+        return courseTitle;
     }
 
-    public void setTitle(String title){
-        this.title = title;
+    public void setCourseTitle(String courseTitle) {
+        this.courseTitle = courseTitle;
     }
 
-    public String getLesson(){
-        return lesson;
+    public String getCourseLesson() {
+        return courseLesson;
     }
 
-    public void setLesson(String lesson){
-        this.lesson = lesson;
+    public void setCourseLesson(String courseLesson) {
+        this.courseLesson = courseLesson;
     }
 
-    public String getPrice(){
-        return price;
+    public String getCoursePrice() {
+        return coursePrice;
     }
 
-    public void setPrice(String price){
-        this.price = price;
+    public void setCoursePrice(String coursePrice) {
+        this.coursePrice = coursePrice;
     }
 
 }

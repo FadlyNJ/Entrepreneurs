@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/forum_list"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:id="@+id/forum_list"
     android:background="#fafbfd"
-    android:focusable="true"
     android:clickable="true"
-    app:strokeWidth="0dp"
+    android:focusable="true"
+    app:cardElevation="0dp"
     app:strokeColor="#fafbfd"
-    app:cardElevation="0dp">
+    app:strokeWidth="0dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -26,9 +25,9 @@
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/iv_thumbnail"
-                android:layout_margin="8dp"
                 android:layout_width="52dp"
-                android:layout_height="52dp"/>
+                android:layout_height="52dp"
+                android:layout_margin="8dp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -40,7 +39,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
-                    android:textColor="#000000"/>
+                    android:textColor="#000000" />
 
                 <TextView
                     android:id="@+id/tv_author"
@@ -48,13 +47,13 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="8dp"
                     android:layout_marginRight="8dp"
-                    android:layout_marginBottom="8dp"/>
+                    android:layout_marginBottom="8dp" />
 
                 <TextView
                     android:id="@+id/tv_release"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="8dp"/>
+                    android:layout_margin="8dp" />
 
                 <TextView
                     android:id="@+id/tv_content"
@@ -62,7 +61,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
                     android:ellipsize="end"
-                    android:maxLines="2"/>
+                    android:maxLines="2" />
 
             </LinearLayout>
 

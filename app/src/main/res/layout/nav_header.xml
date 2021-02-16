@@ -4,16 +4,16 @@
     android:layout_width="match_parent"
     android:layout_height="220dp"
     android:background="#191919"
-    android:padding="24dp"
-    android:theme="@style/ThemeOverlay.AppCompat.Dark"
+    android:gravity="bottom"
     android:orientation="vertical"
-    android:gravity="bottom">
+    android:padding="24dp"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
     <View
         android:layout_width="match_parent"
         android:layout_height="3dp"
-        android:background="@android:color/darker_gray"
-        android:layout_marginBottom="30dp"/>
+        android:layout_marginBottom="30dp"
+        android:background="@android:color/darker_gray" />
 
     <TextView
         android:id="@+id/forum_fragment"
@@ -21,12 +21,12 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="50dp"
         android:text="Entrepreneurs Forum"
-        android:textSize="9pt"
-        android:textColor="@color/selector_txt"/>
+        android:textColor="@color/selector_txt"
+        android:textSize="9pt" />
 
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="@android:color/darker_gray"/>
+        android:background="@android:color/darker_gray" />
 
 </LinearLayout>

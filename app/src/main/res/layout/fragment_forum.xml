@@ -18,60 +18,60 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="40dp"
+                android:layout_gravity=""
                 android:layout_marginLeft="16dp"
+                android:layout_marginTop="40dp"
                 android:layout_marginRight="16dp"
                 android:text="ENTREPRENEURS. Forum"
-                android:textSize="11pt"
                 android:textColor="@color/black"
-                android:layout_gravity=""/>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="30dp"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginRight="16dp"
-                    android:background="#ffffff"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="All Discussion"
-                        android:textSize="8pt"
-                        android:padding="24dp"/>
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="2dp"
-                        android:background="?android:attr/listDivider"/>
-
-                    <androidx.recyclerview.widget.RecyclerView
-                        android:overScrollMode="never"
-                        android:id="@+id/forum_recycler"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical"/>
-
-                </LinearLayout>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp"
-                android:layout_marginTop="30dp"
-                android:text="Viewing 1 - 5 of 5 discussions"/>
+                android:textSize="11pt" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp"
                 android:layout_marginTop="30dp"
-                android:orientation="horizontal"
-                android:background="#ffffff">
+                android:layout_marginRight="16dp"
+                android:background="#ffffff"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="24dp"
+                    android:text="All Discussion"
+                    android:textSize="8pt" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="?android:attr/listDivider" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/forum_recycler"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:overScrollMode="never" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="16dp"
+                android:text="Viewing 1 - 5 of 5 discussions" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="16dp"
+                android:background="#ffffff"
+                android:orientation="horizontal">
 
                 <LinearLayout
                     android:layout_width="48dp"
@@ -82,7 +82,7 @@
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/ic_baseline_info_24"/>
+                        android:src="@drawable/ic_baseline_info_24" />
 
                 </LinearLayout>
 
@@ -90,10 +90,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="16dp"
+                    android:gravity="center_vertical"
                     android:text="You must be logged in to create new discussion"
                     android:textColor="@color/black"
-                    android:textSize="6pt"
-                    android:gravity="center_vertical"/>
+                    android:textSize="6pt" />
 
             </LinearLayout>
 
@@ -108,16 +108,16 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/logo"
                     android:layout_marginTop="30dp"
                     android:clickable="true"
-                    android:focusable="true"/>
+                    android:focusable="true"
+                    android:src="@drawable/logo" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="© 2021 - Entrepreneurs Id"
-                    android:layout_marginTop="30dp"/>
+                    android:layout_marginTop="30dp"
+                    android:text="© 2021 - Entrepreneurs Id" />
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -129,32 +129,32 @@
                     <ImageView
                         android:layout_width="24dp"
                         android:layout_height="24dp"
-                        android:src="@drawable/ic_round_email"
-                        android:layout_marginRight="8dp"
                         android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
                         android:clickable="true"
+                        android:contentDescription="Contact our Email !"
                         android:focusable="true"
-                        android:contentDescription="Contact our Email !"/>
+                        android:src="@drawable/ic_round_email" />
 
                     <ImageView
                         android:layout_width="24dp"
                         android:layout_height="24dp"
-                        android:src="@drawable/ic_round_instagram"
-                        android:layout_marginRight="8dp"
                         android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
                         android:clickable="true"
+                        android:contentDescription="Follow Our Instagram"
                         android:focusable="true"
-                        android:contentDescription="Follow Our Instagram"/>
+                        android:src="@drawable/ic_round_instagram" />
 
                     <ImageView
                         android:layout_width="24dp"
                         android:layout_height="24dp"
-                        android:src="@drawable/ic_round_youtube"
-                        android:layout_marginRight="8dp"
                         android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
                         android:clickable="true"
+                        android:contentDescription="Subscribe to Our Youtube Channel"
                         android:focusable="true"
-                        android:contentDescription="Subscribe to Our Youtube Channel"/>
+                        android:src="@drawable/ic_round_youtube" />
 
                 </LinearLayout>
 

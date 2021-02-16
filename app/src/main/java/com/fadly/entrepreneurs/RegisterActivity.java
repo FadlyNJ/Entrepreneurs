@@ -15,7 +15,7 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
-public class Register extends AppCompatActivity {
+public class RegisterActivity extends AppCompatActivity {
     private TextView tvSignin, tvTerms, tvService, tvPrivacy;
     private ImageView ivHome;
     private TextInputLayout tilEmail, tilPassword, tilFirst, tilLast, tilNick;
@@ -42,7 +42,7 @@ public class Register extends AppCompatActivity {
         tvSignin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent login = new Intent(Register.this, Login.class);
+                Intent login = new Intent(RegisterActivity.this, LoginActivity.class);
                 startActivity(login);
                 finish();
 
@@ -53,7 +53,7 @@ public class Register extends AppCompatActivity {
         ivHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent home = new Intent(Register.this, MainActivity.class);
+                Intent home = new Intent(RegisterActivity.this, MainActivity.class);
                 home.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(home);
 
@@ -64,7 +64,7 @@ public class Register extends AppCompatActivity {
         tvTerms.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                new MaterialAlertDialogBuilder(Register.this)
+                new MaterialAlertDialogBuilder(RegisterActivity.this)
                         .setTitle("Terms of Service")
                         .setMessage("Lorem ipsum dolor sit amet, consectetur adipiscing elit, " +
                                 "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. " +
@@ -89,15 +89,15 @@ public class Register extends AppCompatActivity {
         tvService.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                new MaterialAlertDialogBuilder(Register.this)
-                    .setTitle("Terms of Service")
-                    .setMessage("Lorem ipsum dolor sit amet, consectetur adipiscing elit, " +
-                            "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. " +
-                            "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris " +
-                            "nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in " +
-                            "reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla " +
-                            "pariatur. Excepteur sint occaecat cupidatat non proident, sunt in " +
-                            "culpa qui officia deserunt mollit anim id est laborum.")
+                new MaterialAlertDialogBuilder(RegisterActivity.this)
+                        .setTitle("Terms of Service")
+                        .setMessage("Lorem ipsum dolor sit amet, consectetur adipiscing elit, " +
+                                "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. " +
+                                "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris " +
+                                "nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in " +
+                                "reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla " +
+                                "pariatur. Excepteur sint occaecat cupidatat non proident, sunt in " +
+                                "culpa qui officia deserunt mollit anim id est laborum.")
                         .setNeutralButton("Ok", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
@@ -105,7 +105,7 @@ public class Register extends AppCompatActivity {
                             }
                         })
 
-                    .show();
+                        .show();
 
             }
         });
@@ -114,7 +114,7 @@ public class Register extends AppCompatActivity {
         tvPrivacy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                new MaterialAlertDialogBuilder(Register.this)
+                new MaterialAlertDialogBuilder(RegisterActivity.this)
                         .setTitle("Privacy Policy")
                         .setMessage("Lorem ipsum dolor sit amet, consectetur adipiscing elit, " +
                                 "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. " +
@@ -136,7 +136,7 @@ public class Register extends AppCompatActivity {
 
     }
 
-    private void validateData(){
+    private void validateData() {
 
         //Initialization Email variables
         tilEmail = (TextInputLayout) findViewById(R.id.tilEmail);
@@ -164,56 +164,56 @@ public class Register extends AppCompatActivity {
         nick = txtNick.getText().toString();
 
         //Check email input, if empty will show error message
-        if(email.isEmpty()){
+        if (email.isEmpty()) {
             tilEmail.setError("Please input your email address");
-        }else{
-            if (!email.isEmpty()){
+        } else {
+            if (!email.isEmpty()) {
                 tilEmail.setError(null);
             }
         }
 
         //Check password input, if empty will show error message
-        if(password.isEmpty()){
+        if (password.isEmpty()) {
             tilPassword.setError("Please input your password");
-        }else{
-            if (!password.isEmpty()){
+        } else {
+            if (!password.isEmpty()) {
                 tilPassword.setError(null);
             }
         }
 
         //Check firstname input, if empty will show error message
-        if(first.isEmpty()){
+        if (first.isEmpty()) {
             tilFirst.setError("Please input your firstname");
-        }else{
-            if (!first.isEmpty()){
+        } else {
+            if (!first.isEmpty()) {
                 tilFirst.setError(null);
             }
         }
 
         //Check lastname input, if empty will show error message
-        if(last.isEmpty()){
+        if (last.isEmpty()) {
             tilLast.setError("Please input your lastname");
-        }else{
-            if (!last.isEmpty()){
+        } else {
+            if (!last.isEmpty()) {
                 tilLast.setError(null);
             }
         }
 
         //Check nickname input, if empty will show error message
-        if(nick.isEmpty()){
+        if (nick.isEmpty()) {
             tilNick.setError("Please input your nickname");
-        }else{
-            if (!nick.isEmpty()){
+        } else {
+            if (!nick.isEmpty()) {
                 tilNick.setError(null);
             }
         }
 
     }
 
-    private void registerCheck(){
+    private void registerCheck() {
 
-        Toast.makeText(Register.this, "PENDAFTARAN BERHASIL :D", Toast.LENGTH_LONG).show();
-        Intent register = new Intent(Register.this, MainActivity.class);
+        Toast.makeText(RegisterActivity.this, "PENDAFTARAN BERHASIL :D", Toast.LENGTH_LONG).show();
+        Intent register = new Intent(RegisterActivity.this, MainActivity.class);
         register.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(register);
 

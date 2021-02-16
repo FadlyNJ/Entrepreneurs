@@ -4,14 +4,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public class BlogsRecyclerAdapter extends RecyclerView.Adapter<BlogsRecyclerAdapter.BlogViewHolder>{
+public class BlogsRecyclerAdapter extends RecyclerView.Adapter<BlogsRecyclerAdapter.BlogViewHolder> {
 
     private ArrayList<Blog> mBlogs;
     private OnBlogListener mOnBlogListener;
@@ -51,10 +50,10 @@ public class BlogsRecyclerAdapter extends RecyclerView.Adapter<BlogsRecyclerAdap
     }
 
     @Override
-    public void onBindViewHolder(BlogsRecyclerAdapter.BlogViewHolder holder, int position) {
-        holder.ivThumbnail.setImageResource(mBlogs.get(position).getImage());
-        holder.tvTitle.setText(mBlogs.get(position).getTitle());
-        holder.tvDate.setText(mBlogs.get(position).getDate());
+    public void onBindViewHolder(BlogViewHolder holder, int position) {
+        holder.ivThumbnail.setImageResource(mBlogs.get(position).getBlogImage());
+        holder.tvTitle.setText(mBlogs.get(position).getBlogTitle());
+        holder.tvDate.setText(mBlogs.get(position).getBlogDate());
     }
 
     @Override
@@ -62,7 +61,7 @@ public class BlogsRecyclerAdapter extends RecyclerView.Adapter<BlogsRecyclerAdap
         return (mBlogs != null) ? mBlogs.size() : 0;
     }
 
-    public interface OnBlogListener{
+    public interface OnBlogListener {
         void onBlogClick(int position);
     }
 }

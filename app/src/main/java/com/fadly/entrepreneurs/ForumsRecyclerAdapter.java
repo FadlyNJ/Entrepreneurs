@@ -3,7 +3,6 @@ package com.fadly.entrepreneurs;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
@@ -12,7 +11,7 @@ import java.util.ArrayList;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class ForumsRecyclerAdapter extends RecyclerView.Adapter<ForumsRecyclerAdapter.ForumViewHolder>{
+public class ForumsRecyclerAdapter extends RecyclerView.Adapter<ForumsRecyclerAdapter.ForumViewHolder> {
 
     private ArrayList<Forum> mForums;
     private OnForumListener mOnForumListener;
@@ -55,11 +54,11 @@ public class ForumsRecyclerAdapter extends RecyclerView.Adapter<ForumsRecyclerAd
 
     @Override
     public void onBindViewHolder(ForumsRecyclerAdapter.ForumViewHolder holder, int position) {
-        holder.ivThumbnail.setImageResource(mForums.get(position).getImage());
-        holder.tvTitle.setText(mForums.get(position).getTitle());
-        holder.tvAuthor.setText(mForums.get(position).getAuthor());
-        holder.tvRelease.setText(mForums.get(position).getRelease());
-        holder.tvContent.setText(mForums.get(position).getContent());
+        holder.ivThumbnail.setImageResource(mForums.get(position).getForumImage());
+        holder.tvTitle.setText(mForums.get(position).getForumTitle());
+        holder.tvAuthor.setText(mForums.get(position).getForumAuthor());
+        holder.tvRelease.setText(mForums.get(position).getForumRelease());
+        holder.tvContent.setText(mForums.get(position).getForumContent());
     }
 
     @Override
@@ -67,7 +66,7 @@ public class ForumsRecyclerAdapter extends RecyclerView.Adapter<ForumsRecyclerAd
         return (mForums != null) ? mForums.size() : 0;
     }
 
-    public interface OnForumListener{
+    public interface OnForumListener {
         void onForumClick(int position);
     }
 }

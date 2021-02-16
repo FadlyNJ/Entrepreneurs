@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Register">
+    tools:context=".RegisterActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -26,7 +25,7 @@
                 android:layout_width="280dp"
                 android:layout_height="?actionBarSize"
                 android:layout_gravity="center"
-                android:src="@drawable/text_entrepreneurs"/>
+                android:src="@drawable/text_entrepreneurs" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -256,14 +255,14 @@
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_register"
+                style="@style/Widget.MaterialComponents.Button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:text="Create Account"
                 android:textAllCaps="false"
                 app:backgroundTint="#007cff"
-                app:cornerRadius="20dp"
-                style="@style/Widget.MaterialComponents.Button"/>
+                app:cornerRadius="20dp" />
 
         </LinearLayout>
 

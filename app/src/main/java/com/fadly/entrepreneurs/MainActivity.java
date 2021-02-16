@@ -16,7 +16,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -39,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        cart = (View)findViewById(R.id.cart);
+        cart = (View) findViewById(R.id.cart);
 
         // Set the Custom Toolbar to replace the ActionBar.
         toolbar = (MaterialToolbar) findViewById(R.id.toolbar);
@@ -47,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
 
-        // Find drawer view
+        // Find navigation view
         nvDrawer = (NavigationView) findViewById(R.id.nav_view);
         // Setup drawer view
         setupDrawerContent(nvDrawer);
@@ -81,9 +80,9 @@ public class MainActivity extends AppCompatActivity {
 
                 //Forum Fragment called
                 getSupportFragmentManager().beginTransaction()
-                    .setReorderingAllowed(true)
-                    .replace(R.id.flcontent, ForumFragment.class, null)
-                    .commit();
+                        .setReorderingAllowed(true)
+                        .replace(R.id.flcontent, ForumFragment.class, null)
+                        .commit();
 
                 //Close Drawer
                 mDrawer.closeDrawers();
@@ -95,8 +94,9 @@ public class MainActivity extends AppCompatActivity {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent login = new Intent(MainActivity.this, Login.class);
+                Intent login = new Intent(MainActivity.this, LoginActivity.class);
                 startActivity(login);
+                mDrawer.closeDrawers();
 
             }
         });
@@ -105,12 +105,12 @@ public class MainActivity extends AppCompatActivity {
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent register = new Intent(MainActivity.this, Register.class);
+                Intent register = new Intent(MainActivity.this, RegisterActivity.class);
                 startActivity(register);
+                mDrawer.closeDrawers();
 
             }
         });
-
 
         ivHome = (ImageView) findViewById(R.id.iv_home);
         ivHome.setOnClickListener(new View.OnClickListener() {
@@ -118,6 +118,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Fragment mFragment = new HomeFragment();
                 getSupportFragmentManager().beginTransaction().replace(R.id.flcontent, mFragment).commit();
+                navigationView.setCheckedItem(R.id.home_fragment);
 
             }
         });
@@ -127,7 +128,7 @@ public class MainActivity extends AppCompatActivity {
     private ActionBarDrawerToggle setupDrawerToggle() {
         // NOTE: Make sure you pass in a valid toolbar reference.  ActionBarDrawToggle() does not require it
         // and will not render the hamburger icon without it.
-        return new ActionBarDrawerToggle(this, mDrawer, toolbar, R.string.drawer_open,  R.string.drawer_close);
+        return new ActionBarDrawerToggle(this, mDrawer, toolbar, R.string.drawer_open, R.string.drawer_close);
     }
 
     @Override
@@ -150,9 +151,9 @@ public class MainActivity extends AppCompatActivity {
             return true;
         }
 
-        switch (item.getItemId()){
+        switch (item.getItemId()) {
 
-            case R.id.cart :
+            case R.id.cart:
                 PopUpCart popUpCart = new PopUpCart();
                 popUpCart.showPopupWindow(cart);
                 break;
@@ -180,7 +181,7 @@ public class MainActivity extends AppCompatActivity {
         // Create a new fragment and specify the fragment to show based on nav item clicked
         Fragment fragment = null;
         Class fragmentClass;
-        switch(menuItem.getItemId()) {
+        switch (menuItem.getItemId()) {
 
             case R.id.home_fragment:
                 fragmentClass = HomeFragment.class;
@@ -242,4 +243,18 @@ public class MainActivity extends AppCompatActivity {
         transaction.commit();
     }
 
+    private static final int TIME_INTERVAL = 2000; // # milliseconds, desired time passed between two back presses.
+    private long mBackPressed;
+
+    @Override
+    public void onBackPressed() {
+        if (mBackPressed + TIME_INTERVAL > System.currentTimeMillis()) {
+            super.onBackPressed();
+            return;
+        } else {
+            Toast.makeText(getBaseContext(), "Tap back button 2x to exit", Toast.LENGTH_SHORT).show();
+        }
+
+        mBackPressed = System.currentTimeMillis();
+    }
 }

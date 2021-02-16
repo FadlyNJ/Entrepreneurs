@@ -12,7 +12,7 @@ import com.google.android.material.button.MaterialButton;
 
 import java.util.ArrayList;
 
-public class CoursesRecyclerAdapter extends RecyclerView.Adapter<CoursesRecyclerAdapter.CourseViewHolder>{
+public class CoursesRecyclerAdapter extends RecyclerView.Adapter<CoursesRecyclerAdapter.CourseViewHolder> {
 
     private ArrayList<Course> mCourses;
     private OnCourseListener mOnCourseListener;
@@ -56,10 +56,10 @@ public class CoursesRecyclerAdapter extends RecyclerView.Adapter<CoursesRecycler
 
     @Override
     public void onBindViewHolder(CourseViewHolder holder, int position) {
-        holder.ivThumbnail.setImageResource(mCourses.get(position).getImage());
-        holder.tvTitle.setText(mCourses.get(position).getTitle());
-        holder.tvPrice.setText(mCourses.get(position).getPrice());
-        holder.tvLesson.setText(mCourses.get(position).getLesson());
+        holder.ivThumbnail.setImageResource(mCourses.get(position).getCourseImage());
+        holder.tvTitle.setText(mCourses.get(position).getCourseTitle());
+        holder.tvPrice.setText(mCourses.get(position).getCoursePrice());
+        holder.tvLesson.setText(mCourses.get(position).getCourseLesson());
     }
 
     @Override
@@ -67,7 +67,7 @@ public class CoursesRecyclerAdapter extends RecyclerView.Adapter<CoursesRecycler
         return (mCourses != null) ? mCourses.size() : 0;
     }
 
-    public interface OnCourseListener{
+    public interface OnCourseListener {
         void onCourseClick(int position);
     }
 }

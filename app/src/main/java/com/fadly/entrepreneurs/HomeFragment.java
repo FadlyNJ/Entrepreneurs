@@ -19,6 +19,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.android.material.button.MaterialButton;
+import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.textfield.TextInputLayout;
 
 import java.util.ArrayList;
@@ -57,7 +58,7 @@ public class HomeFragment extends Fragment
     private AutoCompleteTextView sortCourse;
 
     //Variables
-    private MaterialButton btnGrid, btnList, btnForum, btnBlog;
+    private MaterialButton btnForum, btnBlog;
     private TextView tvBlog;
     private ImageView ivLogo;
     private CardView cardStart, cardBlog;
@@ -102,9 +103,9 @@ public class HomeFragment extends Fragment
         //Exposed Dropdown
         addSortList();
         tilSort = (TextInputLayout) view.findViewById(R.id.sort_course);
-        sortCourse = (AutoCompleteTextView) view.findViewById(R.id.sort_list) ;
+        sortCourse = (AutoCompleteTextView) view.findViewById(R.id.sort_list);
         sortCourse.setText("Alphabetical", false);
-        mSortRecyclerAdapter = new ArrayAdapter<>(getActivity(),R.layout.sort_list, mSort);
+        mSortRecyclerAdapter = new ArrayAdapter<>(getActivity(), R.layout.sort_list, mSort);
         sortCourse.setAdapter(mSortRecyclerAdapter);
 
         //Recycler View Course
@@ -124,15 +125,15 @@ public class HomeFragment extends Fragment
         mRecyclerViewForum.setAdapter(mForumRecyclerAdapter);
         mRecyclerViewForum.addItemDecoration(itemDecoration);
 
-        btnGrid = (MaterialButton) view.findViewById(R.id.btn_grid);
-        btnGrid.setChecked(true);
-
         btnForum = (MaterialButton) view.findViewById(R.id.btn_forum);
         btnForum.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Fragment mFragment = new ForumFragment();
                 getParentFragmentManager().beginTransaction().replace(R.id.flcontent, mFragment).commit();
+                View inflatedView = getLayoutInflater().inflate(R.layout.activity_main, null);
+                NavigationView navigationView = (NavigationView) inflatedView.findViewById(R.id.nav_view);
+                navigationView.setCheckedItem(R.id.premiere_fragment);
             }
         });
 
@@ -142,6 +143,9 @@ public class HomeFragment extends Fragment
             public void onClick(View v) {
                 Fragment mFragment = new StartFragment();
                 getParentFragmentManager().beginTransaction().replace(R.id.flcontent, mFragment).commit();
+                View inflatedView = getLayoutInflater().inflate(R.layout.activity_main, null);
+                NavigationView navigationView = (NavigationView) inflatedView.findViewById(R.id.nav_view);
+                navigationView.setCheckedItem(R.id.start_fragment);
             }
         });
 
@@ -149,7 +153,7 @@ public class HomeFragment extends Fragment
         cardBlog.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Fragment mFragment = new AcademyFragment();
+                Fragment mFragment = new DetailBlog();
                 getParentFragmentManager().beginTransaction().replace(R.id.flcontent, mFragment).commit();
             }
         });
@@ -186,14 +190,14 @@ public class HomeFragment extends Fragment
 
     }
 
-    void addSortList(){
+    void addSortList() {
         mSort = new ArrayList<>();
         mSort.add(new String("Alphabetical"));
         mSort.add(new String("Newly Created"));
 
     }
 
-    void addDataArticle(){
+    void addDataArticle() {
         mArticles = new ArrayList<>();
         mArticles.add(new Article(R.drawable.thumbnail_artikel1,
                 "Eatlah : Bisnis Fast Food dengan Modal Kecil Hingga Sukses Punya 17 Outlet"));
@@ -206,7 +210,7 @@ public class HomeFragment extends Fragment
 
     }
 
-    void addDataBlog(){
+    void addDataBlog() {
         mBlogs = new ArrayList<>();
         mBlogs.add(new Blog(R.drawable.thumbnail_blog1,
                 "Tips Desain Rumah Menjadi Seperti Kantor",
@@ -223,7 +227,7 @@ public class HomeFragment extends Fragment
 
     }
 
-    void addDataCourse(){
+    void addDataCourse() {
         mCourses = new ArrayList<>();
         mCourses.add(new Course(R.drawable.poster_course1,
                 "BEAUTYPRENEUR: Branding 101: How To Nail The “Beauty Industry”",
@@ -244,7 +248,7 @@ public class HomeFragment extends Fragment
 
     }
 
-    void addDataForum(){
+    void addDataForum() {
         mForums = new ArrayList<>();
         mForums.add(new Forum(R.drawable.avatar1,
                 "Bagaimana Belajar Mengatakan ‘Tidak’ Dapat Meningkatkan Bisnis Anda",
@@ -281,21 +285,33 @@ public class HomeFragment extends Fragment
 
     @Override
     public void onArticleClick(int position) {
-        Log.d(TAG, "onArticleClick: clicked." + position);
+        Log.d(TAG, "onArticleClick() called with: position = [" + position + "]");
+        Article article = mArticles.get(position);
+        Fragment mFragment = new DetailArticle();
+        getParentFragmentManager().beginTransaction().replace(R.id.flcontent, mFragment).commit();
     }
 
     @Override
     public void onBlogClick(int position) {
-        Log.d(TAG, "onBlogClick: clicked." + position);
+        Log.d(TAG, "onBlogClick() called with: position = [" + position + "]");
+        Blog blog = mBlogs.get(position);
+        Fragment mFragment = new DetailBlog();
+        getParentFragmentManager().beginTransaction().replace(R.id.flcontent, mFragment).commit();
     }
 
     @Override
     public void onCourseClick(int position) {
-        Log.d(TAG, "onCourseClick: clicked." + position);
+        Log.d(TAG, "onCourseClick() called with: position = [" + position + "]");
+        Course course = mCourses.get(position);
+        Fragment mFragment = new DetailCourse();
+        getParentFragmentManager().beginTransaction().replace(R.id.flcontent, mFragment).commit();
     }
 
     @Override
     public void onForumClick(int position) {
-        Log.d(TAG, "onForumClick: clicked." + position);
+        Log.d(TAG, "onForumClick() called with: position = [" + position + "]");
+        Forum forum = mForums.get(position);
+        Fragment mFragment = new DetailForum();
+        getParentFragmentManager().beginTransaction().replace(R.id.flcontent, mFragment).commit();
     }
 }

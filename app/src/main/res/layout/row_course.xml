@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<com.google.android.material.card.MaterialCardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/course_list"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:id="@+id/course_list"
     android:layout_margin="8dp"
     android:clickable="true"
     android:focusable="true">
@@ -20,7 +19,7 @@
             android:id="@+id/iv_thumbnail"
             android:layout_width="wrap_content"
             android:layout_height="200dp"
-            android:scaleType="centerCrop"/>
+            android:scaleType="centerCrop" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -32,7 +31,7 @@
                 android:id="@+id/tvLesson"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="4dp"/>
+                android:layout_margin="4dp" />
 
             <TextView
                 android:id="@+id/tv_title"
@@ -40,36 +39,36 @@
                 android:layout_height="wrap_content"
                 android:ellipsize="end"
                 android:maxLines="2"
+                android:textAppearance="?attr/textAppearanceHeadline6"
                 android:textColor="#000000"
-                android:textSize="10pt"
-                android:textAppearance="?attr/textAppearanceHeadline6"/>
+                android:textSize="10pt" />
 
             <LinearLayout
-                android:gravity="center_vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
+                android:gravity="center_vertical"
                 android:orientation="horizontal">
 
                 <TextView
                     android:id="@+id/tvPrice"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textAppearance="?attr/textAppearanceHeadline6"
                     android:textColor="#000000"
-                    android:textSize="10pt"
-                    android:textAppearance="?attr/textAppearanceHeadline6"/>
+                    android:textSize="10pt" />
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btnAdd"
+                    style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="75dp"
                     android:text="Pelajari Sekarang"
-                    android:textColor="#007cff"
                     android:textAllCaps="false"
+                    android:textColor="#007cff"
                     app:icon="@drawable/ic_add"
-                    app:iconTint="#007cff"
-                    style="@style/Widget.MaterialComponents.Button.TextButton.Icon"/>
+                    app:iconTint="#007cff" />
 
             </LinearLayout>
 

@@ -2,54 +2,54 @@ package com.fadly.entrepreneurs;
 
 public class Forum {
 
-    private Integer image;
-    private String title, release, author, content;
+    Integer forumImage;
+    String forumTitle, forumRelease, forumAuthor, forumContent;
 
-    public Forum(Integer image, String title, String release, String author, String content){
-        this.image = image;
-        this.title = title;
-        this.release = release;
-        this.content = content;
-        this.author = author;
+    public Forum(Integer forumImage, String forumTitle, String forumRelease, String forumAuthor, String forumContent) {
+        this.forumImage = forumImage;
+        this.forumTitle = forumTitle;
+        this.forumRelease = forumRelease;
+        this.forumContent = forumContent;
+        this.forumAuthor = forumAuthor;
     }
 
-    public Integer getImage(){
-        return image;
+    public Integer getForumImage() {
+        return forumImage;
     }
 
-    public void setImage(Integer image){
-        this.image = image;
+    public void setForumImage(Integer forumImage) {
+        this.forumImage = forumImage;
     }
 
-    public String getTitle(){
-        return title;
+    public String getForumTitle() {
+        return forumTitle;
     }
 
-    public void setTitle(String title){
-        this.title = title;
+    public void setForumTitle(String forumTitle) {
+        this.forumTitle = forumTitle;
     }
 
-    public String getRelease(){
-        return release;
+    public String getForumRelease() {
+        return forumRelease;
     }
 
-    public void setRelease(String release){
-        this.release = release;
+    public void setForumRelease(String forumRelease) {
+        this.forumRelease = forumRelease;
     }
 
-    public String getAuthor(){
-        return author;
+    public String getForumAuthor() {
+        return forumAuthor;
     }
 
-    public void setAuthor(String author){
-        this.author = author;
+    public void setForumAuthor(String forumAuthor) {
+        this.forumAuthor = forumAuthor;
     }
 
-    public String getContent(){
-        return content;
+    public String getForumContent() {
+        return forumContent;
     }
 
-    public void setContent(String content){
-        this.content = content;
+    public void setForumContent(String forumContent) {
+        this.forumContent = forumContent;
     }
 }

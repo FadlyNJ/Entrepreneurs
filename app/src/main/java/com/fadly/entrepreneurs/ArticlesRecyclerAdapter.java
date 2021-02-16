@@ -4,7 +4,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
@@ -51,8 +50,8 @@ public class ArticlesRecyclerAdapter extends RecyclerView.Adapter<ArticlesRecycl
 
     @Override
     public void onBindViewHolder(ArticleViewHolder holder, int position) {
-        holder.ivThumbnail.setImageResource(mArticles.get(position).getImage());
-        holder.tvTitle.setText(mArticles.get(position).getTitle());
+        holder.ivThumbnail.setImageResource(mArticles.get(position).getArticleImage());
+        holder.tvTitle.setText(mArticles.get(position).getArticleTitle());
     }
 
     @Override
@@ -60,7 +59,7 @@ public class ArticlesRecyclerAdapter extends RecyclerView.Adapter<ArticlesRecycl
         return (mArticles != null) ? mArticles.size() : 0;
     }
 
-    public interface OnArticleListener{
+    public interface OnArticleListener {
         void onArticleClick(int position);
     }
 

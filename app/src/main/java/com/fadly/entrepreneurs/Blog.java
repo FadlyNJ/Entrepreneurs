@@ -2,36 +2,36 @@ package com.fadly.entrepreneurs;
 
 public class Blog {
 
-    private Integer image;
-    private String title, date;
+    Integer blogImage;
+    String blogTitle, blogDate;
 
-    public Blog(Integer image, String title, String date){
-        this.image = image;
-        this.title = title;
-        this.date = date;
+    public Blog(Integer blogImage, String blogTitle, String blogDate) {
+        this.blogImage = blogImage;
+        this.blogTitle = blogTitle;
+        this.blogDate = blogDate;
     }
 
-    public Integer getImage(){
-        return image;
+    public Integer getBlogImage() {
+        return blogImage;
     }
 
-    public void setImage(Integer image){
-        this.image = image;
+    public void setBlogImage(Integer blogImage) {
+        this.blogImage = blogImage;
     }
 
-    public String getTitle(){
-        return title;
+    public String getBlogTitle() {
+        return blogTitle;
     }
 
-    public void setTitle(String title){
-        this.title = title;
+    public void setBlogTitle(String blogTitle) {
+        this.blogTitle = blogTitle;
     }
 
-    public String getDate(){
-        return date;
+    public String getBlogDate() {
+        return blogDate;
     }
 
-    public void setDate(String date){
-        this.date = date;
+    public void setBlogDate(String blogDate) {
+        this.blogDate = blogDate;
     }
 }
