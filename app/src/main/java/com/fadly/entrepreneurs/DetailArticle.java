@@ -1,6 +1,7 @@
 package com.fadly.entrepreneurs;
 
 import android.graphics.Color;
+import android.media.Image;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -8,14 +9,18 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.android.material.button.MaterialButton;
 
 public class DetailArticle extends Fragment {
 
-    private TextView tvNyoba;
-    private MaterialButton btnChange;
+    private String title;
+    private Integer image;
+
+    private TextView tvTitle;
+    private ImageView ivThumbnail;
 
     public DetailArticle() {
         // Required empty public constructor
@@ -33,22 +38,16 @@ public class DetailArticle extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_detail_article, container, false);
 
-        tvNyoba = (TextView) view.findViewById(R.id.tv_nyoba);
-        btnChange = (MaterialButton) view.findViewById(R.id.btn_change);
+        tvTitle = (TextView) view.findViewById(R.id.tv_title);
+        ivThumbnail = (ImageView) view.findViewById(R.id.iv_thumbnail);
 
-        btnChange.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (tvNyoba.getVisibility() == View.GONE) {
-                    tvNyoba.setVisibility(View.VISIBLE);
-                    btnChange.setText("Make Text Invisible");
-                } else {
-                    tvNyoba.setVisibility(View.GONE);
-                    btnChange.setText("Make Text Visible");
-                }
-            }
-        });
+        if (getArguments() != null) {
+            title = getArguments().getString("title");
+            image = getArguments().getInt("image");
 
+            tvTitle.setText(title);
+            ivThumbnail.setImageResource(image);
+        }
         return view;
     }
 }

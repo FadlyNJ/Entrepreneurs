@@ -1,5 +1,8 @@
 package com.fadly.entrepreneurs;
 
+import android.content.Intent;
+import android.media.Image;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.cardview.widget.CardView;
@@ -19,7 +22,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.android.material.button.MaterialButton;
-import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.textfield.TextInputLayout;
 
 import java.util.ArrayList;
@@ -59,8 +61,8 @@ public class HomeFragment extends Fragment
 
     //Variables
     private MaterialButton btnForum, btnBlog;
-    private TextView tvBlog;
-    private ImageView ivLogo;
+    private TextView tvBlog, tvDate, tvIsi;
+    private ImageView ivLogo, ivStart, ivBlog, ivEmail, ivYoutube, ivInstagram;
     private CardView cardStart, cardBlog;
 
     public HomeFragment() {
@@ -68,6 +70,21 @@ public class HomeFragment extends Fragment
 
     }
 
+    @Override
+    public void onActivityCreated(Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+
+        if (savedInstanceState != null) {
+            //Restore the fragment's state here
+        }
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+
+        //Save the fragment's state here
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -130,10 +147,8 @@ public class HomeFragment extends Fragment
             @Override
             public void onClick(View v) {
                 Fragment mFragment = new ForumFragment();
-                getParentFragmentManager().beginTransaction().replace(R.id.flcontent, mFragment).commit();
+                getParentFragmentManager().beginTransaction().replace(R.id.flcontent, mFragment).addToBackStack(null).commit();
                 View inflatedView = getLayoutInflater().inflate(R.layout.activity_main, null);
-                NavigationView navigationView = (NavigationView) inflatedView.findViewById(R.id.nav_view);
-                navigationView.setCheckedItem(R.id.premiere_fragment);
             }
         });
 
@@ -142,10 +157,8 @@ public class HomeFragment extends Fragment
             @Override
             public void onClick(View v) {
                 Fragment mFragment = new StartFragment();
-                getParentFragmentManager().beginTransaction().replace(R.id.flcontent, mFragment).commit();
+                getParentFragmentManager().beginTransaction().replace(R.id.flcontent, mFragment).addToBackStack(null).commit();
                 View inflatedView = getLayoutInflater().inflate(R.layout.activity_main, null);
-                NavigationView navigationView = (NavigationView) inflatedView.findViewById(R.id.nav_view);
-                navigationView.setCheckedItem(R.id.start_fragment);
             }
         });
 
@@ -154,7 +167,7 @@ public class HomeFragment extends Fragment
             @Override
             public void onClick(View v) {
                 Fragment mFragment = new DetailBlog();
-                getParentFragmentManager().beginTransaction().replace(R.id.flcontent, mFragment).commit();
+                getParentFragmentManager().beginTransaction().replace(R.id.flcontent, mFragment).addToBackStack(null).commit();
             }
         });
 
@@ -162,17 +175,18 @@ public class HomeFragment extends Fragment
         btnBlog.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Fragment mFragment = new AcademyFragment();
-                getParentFragmentManager().beginTransaction().replace(R.id.flcontent, mFragment).commit();
+                Fragment mFragment = new DetailBlog();
+                getParentFragmentManager().beginTransaction().replace(R.id.flcontent, mFragment).addToBackStack(null).commit();
             }
         });
 
         tvBlog = (TextView) view.findViewById(R.id.tv_blog);
+        tvBlog.setText(R.string.artikel_bisnis);
         tvBlog.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Fragment mFragment = new AcademyFragment();
-                getParentFragmentManager().beginTransaction().replace(R.id.flcontent, mFragment).commit();
+                Fragment mFragment = new DetailBlog();
+                getParentFragmentManager().beginTransaction().replace(R.id.flcontent, mFragment).addToBackStack(null).commit();
             }
         });
 
@@ -185,6 +199,44 @@ public class HomeFragment extends Fragment
 
             }
         });
+
+        String address = "info@entrepreneurs.id";
+        ivEmail = (ImageView) view.findViewById(R.id.iv_email);
+        ivEmail.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                contactEmail(address);
+
+            }
+        });
+
+        ivInstagram = (ImageView) view.findViewById(R.id.iv_instagram);
+        ivInstagram.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                followInstagram();
+            }
+        });
+
+        ivYoutube = (ImageView) view.findViewById(R.id.iv_youtube);
+        ivYoutube.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                subscribeYoutube();
+            }
+        });
+
+        ivStart = (ImageView) view.findViewById(R.id.iv_start);
+        ivStart.setImageResource(R.drawable.thumbnail_start);
+
+        tvDate = (TextView) view.findViewById(R.id.tv_date);
+        tvDate.setText("January 19, 2021  •  Success");
+
+        tvIsi = (TextView) view.findViewById(R.id.tv_isi);
+        tvIsi.setText(R.string.isi_artikel_bisnis);
+
+        ivBlog = (ImageView) view.findViewById(R.id.iv_blog);
+        ivBlog.setImageResource(R.drawable.thumbnail_blog);
 
         return view;
 
@@ -288,7 +340,11 @@ public class HomeFragment extends Fragment
         Log.d(TAG, "onArticleClick() called with: position = [" + position + "]");
         Article article = mArticles.get(position);
         Fragment mFragment = new DetailArticle();
-        getParentFragmentManager().beginTransaction().replace(R.id.flcontent, mFragment).commit();
+        Bundle args = new Bundle();
+        args.putInt("image", article.articleImage);
+        args.putString("title", article.articleTitle);
+        mFragment.setArguments(args);
+        getParentFragmentManager().beginTransaction().replace(R.id.flcontent, mFragment).addToBackStack(null).commit();
     }
 
     @Override
@@ -296,7 +352,12 @@ public class HomeFragment extends Fragment
         Log.d(TAG, "onBlogClick() called with: position = [" + position + "]");
         Blog blog = mBlogs.get(position);
         Fragment mFragment = new DetailBlog();
-        getParentFragmentManager().beginTransaction().replace(R.id.flcontent, mFragment).commit();
+        Bundle args = new Bundle();
+        args.putInt("image", blog.blogImage);
+        args.putString("date", blog.blogDate);
+        args.putString("title", blog.blogTitle);
+        mFragment.setArguments(args);
+        getParentFragmentManager().beginTransaction().replace(R.id.flcontent, mFragment).addToBackStack(null).commit();
     }
 
     @Override
@@ -304,7 +365,13 @@ public class HomeFragment extends Fragment
         Log.d(TAG, "onCourseClick() called with: position = [" + position + "]");
         Course course = mCourses.get(position);
         Fragment mFragment = new DetailCourse();
-        getParentFragmentManager().beginTransaction().replace(R.id.flcontent, mFragment).commit();
+        Bundle args = new Bundle();
+        args.putInt("image", course.courseImage);
+        args.putString("lesson", course.courseLesson);
+        args.putString("title", course.courseTitle);
+        args.putString("price", course.coursePrice);
+        mFragment.setArguments(args);
+        getParentFragmentManager().beginTransaction().replace(R.id.flcontent, mFragment).addToBackStack(null).commit();
     }
 
     @Override
@@ -312,6 +379,34 @@ public class HomeFragment extends Fragment
         Log.d(TAG, "onForumClick() called with: position = [" + position + "]");
         Forum forum = mForums.get(position);
         Fragment mFragment = new DetailForum();
-        getParentFragmentManager().beginTransaction().replace(R.id.flcontent, mFragment).commit();
+        Bundle args = new Bundle();
+        args.putInt("image", forum.forumImage);
+        args.putString("author", forum.forumAuthor);
+        args.putString("content", forum.forumContent);
+        args.putString("release", forum.forumRelease);
+        args.putString("title", forum.forumTitle);
+        mFragment.setArguments(args);
+        getParentFragmentManager().beginTransaction().replace(R.id.flcontent, mFragment).addToBackStack(null).commit();
+    }
+
+    public void contactEmail(String address) {
+        Intent intent = new Intent(Intent.ACTION_SENDTO);
+        intent.setData(Uri.parse("mailto:"));
+        intent.putExtra(Intent.EXTRA_EMAIL, address);
+        if (intent.resolveActivity(getActivity().getPackageManager()) != null) {
+            startActivity(Intent.createChooser(intent, "Contact us with.."));
+        }
+    }
+
+    public void subscribeYoutube() {
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        intent.setData(Uri.parse(getString(R.string.url_youtube)));
+        startActivity(intent);
+    }
+
+    public void followInstagram() {
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        intent.setData(Uri.parse(getString(R.string.url_instagram)));
+        startActivity(intent);
     }
 }

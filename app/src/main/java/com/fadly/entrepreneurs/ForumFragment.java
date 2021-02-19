@@ -85,9 +85,15 @@ public class ForumFragment extends Fragment implements ForumsRecyclerAdapter.OnF
 
     @Override
     public void onForumClick(int position) {
-        Log.d(TAG, "onForumClick() called with: position = [" + position + "]");
         Forum forum = mForums.get(position);
         Fragment mFragment = new DetailForum();
-        getParentFragmentManager().beginTransaction().replace(R.id.flcontent, mFragment).commit();
+        Bundle args = new Bundle();
+        args.putInt("image", forum.forumImage);
+        args.putString("author", forum.forumAuthor);
+        args.putString("content", forum.forumContent);
+        args.putString("release", forum.forumRelease);
+        args.putString("title", forum.forumTitle);
+        mFragment.setArguments(args);
+        getParentFragmentManager().beginTransaction().replace(R.id.flcontent, mFragment).addToBackStack(null).commit();
     }
 }

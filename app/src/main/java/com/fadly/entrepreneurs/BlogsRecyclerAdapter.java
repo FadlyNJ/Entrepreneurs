@@ -1,14 +1,20 @@
 package com.fadly.entrepreneurs;
 
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+
+import static android.content.ContentValues.TAG;
 
 public class BlogsRecyclerAdapter extends RecyclerView.Adapter<BlogsRecyclerAdapter.BlogViewHolder> {
 
@@ -54,6 +60,7 @@ public class BlogsRecyclerAdapter extends RecyclerView.Adapter<BlogsRecyclerAdap
         holder.ivThumbnail.setImageResource(mBlogs.get(position).getBlogImage());
         holder.tvTitle.setText(mBlogs.get(position).getBlogTitle());
         holder.tvDate.setText(mBlogs.get(position).getBlogDate());
+
     }
 
     @Override

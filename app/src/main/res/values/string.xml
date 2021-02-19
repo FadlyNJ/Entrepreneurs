@@ -17,11 +17,16 @@
     <string name="academy_fragment">Academy</string>
     <string name="bootcamp_fragment">Bootcamp</string>
     <string name="group_fragment">Group Coaching</string>
-    <string name="coaching_fragment">1-1 Coaching</string>
+    <string name="coaching_fragment">1&#8211;1 Coaching</string>
     <string name="premiere_fragment">Premiere</string>
     <string name="live_fragment">Live</string>
 
     <!--Artikel-->
     <string name="artikel_bisnis">Bagaimana Menerapkan Sistem Bisnis dalam Bisnis?</string>
     <string name="isi_artikel_bisnis">Entrepreneurs.id- Jika Anda menginginkan perusahaan yang sukses, Anda perlu membuat sistem di mana seluruh pekerjaan</string>
+
+    <!--Link-->
+    <string name="url_instagram">https://www.instagram.com/entrepreneursid_/</string>
+    <string name="url_youtube">https://www.youtube.com/channel/UCwWFpZVVivM1oVgVhqIK4yg</string>
+
 </resources>

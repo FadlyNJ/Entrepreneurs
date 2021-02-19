@@ -68,12 +68,12 @@ public class Lyrics {
      *
      * cause even though he got social skills
      * that doesn't mean i can't pay the bills
-     * anywhere make the most of him
-     * but she's move on pretty bloody quick
+     * anyway, make the most of him
+     * but she moves on pretty bloody quick
      * oo-oh
      *
      * your new boyfriend is an arsehole
-     * woooh
+     * woo-h
      *
      * yeah i've met jared
      * of course i've met jared
@@ -81,8 +81,9 @@ public class Lyrics {
      * you hit him off instantly
      * i know cause you won't stop telling me
      *
-     * seen his jawline
-     * i thought about how he looks like nude
+     * seen his jawline shoulders and muscles
+     * pushed against his fashion sense
+     * i thought about what he looks like nude
      * i'm not gay though
      *
      * she's living the dream
@@ -123,19 +124,12 @@ public class Lyrics {
      * and i want you to notice me
      *
      * jason derulo
+     * i want you to
      * i want to smell your hair
      */
 
-    /** Dream Makers - Over Again
-     * The sky was crying and the mirror was looking
-     * i stood with silence with nothing but loneliness
-     *
-     * i miss the star and the dreamy night
-     * the song we've always dance to
-     */
-
     /** Coldplay - Fix You
-     * when you try your best but you don't succeed :)
+     * when you try your best but you don't succeed
      * when you get what you want but not what you need
      * when you feel so tired but you can't sleep
      * stuck in reverse
@@ -169,6 +163,10 @@ public class Lyrics {
      * lights will guide you home
      * and ignite your bones
      * and i will try to fix you
+     */
+
+    /**
+     *z
      */
 
 }

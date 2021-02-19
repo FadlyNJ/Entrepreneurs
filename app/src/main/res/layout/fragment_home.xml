@@ -35,9 +35,9 @@
                 android:focusable="true">
 
                 <ImageView
+                    android:id="@+id/iv_blog"
                     android:layout_width="match_parent"
-                    android:layout_height="150dp"
-                    android:src="@drawable/thumbnail_blog" />
+                    android:layout_height="150dp" />
 
             </com.google.android.material.card.MaterialCardView>
 
@@ -46,22 +46,21 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
-                android:text="@string/artikel_bisnis"
                 android:textAppearance="?attr/textAppearanceHeadline6"
                 android:textColor="#000000"
                 android:textSize="8pt" />
 
             <TextView
+                android:id="@+id/tv_date"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="8dp"
-                android:text="January 19, 2021  •  Success" />
+                android:layout_margin="8dp" />
 
             <TextView
+                android:id="@+id/tv_isi"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
-                android:text="@string/isi_artikel_bisnis"
                 android:textAppearance="?attr/textAppearanceHeadline1"
                 android:textColor="#000000"
                 android:textSize="7pt" />
@@ -91,10 +90,9 @@
                 android:focusable="true">
 
                 <ImageView
+                    android:id="@+id/iv_start"
                     android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:contentDescription="@string/artikel_bisnis"
-                    android:src="@drawable/thumbnail_start" />
+                    android:layout_height="100dp"/>
 
             </com.google.android.material.card.MaterialCardView>
 
@@ -198,6 +196,7 @@
                     android:orientation="horizontal">
 
                     <ImageView
+                        android:id="@+id/iv_email"
                         android:layout_width="24dp"
                         android:layout_height="24dp"
                         android:layout_marginLeft="8dp"
@@ -208,6 +207,7 @@
                         android:src="@drawable/ic_round_email" />
 
                     <ImageView
+                        android:id="@+id/iv_instagram"
                         android:layout_width="24dp"
                         android:layout_height="24dp"
                         android:layout_marginLeft="8dp"
@@ -218,6 +218,7 @@
                         android:src="@drawable/ic_round_instagram" />
 
                     <ImageView
+                        android:id="@+id/iv_youtube"
                         android:layout_width="24dp"
                         android:layout_height="24dp"
                         android:layout_marginLeft="8dp"

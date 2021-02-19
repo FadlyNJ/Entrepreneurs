@@ -76,7 +76,6 @@ public class PopUpCart implements CartsRecyclerAdapter.OnCartListener {
             btnCheckout.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Toast.makeText(view.getContext(), "Haloha ", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(view.getContext(), LoginActivity.class)
                             .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     view.getContext().startActivity(intent);
@@ -87,7 +86,6 @@ public class PopUpCart implements CartsRecyclerAdapter.OnCartListener {
             btnCart.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Toast.makeText(view.getContext(), "Just wanna hold your pussy", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(view.getContext(), RegisterActivity.class)
                             .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     view.getContext().startActivity(intent);
